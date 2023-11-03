@@ -7,22 +7,22 @@ Site administrators can quickly and easily add, update, and remove locations fro
 
 #### Annemarie Lewis
 
-<img src='AM.png' alt="Annemarie's headshot" width='75'>
+<img src='readmePics/AM.png' alt="Annemarie's headshot" width='75'>
 
 github.com/annemarielewis
 
 #### Haroon Frotan
-<img src='Haroon.png' alt="Haroon's headshot" width='75'>
+<img src='readmePics/Haroon.png' alt="Haroon's headshot" width='75'>
 
 github.com/HaroonFro
 
 #### Rhys Frazier
-<img src='Rhys.png' alt="Rhys's headshot" width='75'>
+<img src='readmePics/Rhys.png' alt="Rhys's headshot" width='75'>
 
 github.com/rhysrfrazier
 
 #### Ryan Fitzgerald
-<img src='Ryan.png' alt="Ryan's headshot" width='75'>
+<img src='readmePics/Ryan.png' alt="Ryan's headshot" width='75'>
 
 github.com/Ryan-Fitzgerald-9
 
@@ -31,15 +31,15 @@ github.com/Ryan-Fitzgerald-9
 
 ### Entity Relationship Diagram (ERD)
 
-<img src=ERD.png alt='ERD showing a parent entity, "region," with many restaurant, activity, attraction, and hotel entity children'>
+<img src=readmePics/ERD.png alt='ERD showing a parent entity, "region," with many restaurant, activity, attraction, and hotel entity children'>
 
 ### Home Page Wireframe
 
-<img src=wireframe.png alt='A wireframe blocking out the location of navigational buttons and key components on the home page. Key components include regional details and a quiz to determine possible things to do in the city'>
+<img src=readmePics/wireframe.png alt='A wireframe blocking out the location of navigational buttons and key components on the home page. Key components include regional details and a quiz to determine possible things to do in the city'>
 
 ### Component Relationship Diagram
 
-<img src='CRD.png' alt='Component relationship diagram for key pages of the app, including home, listed elements, and search details'>
+<img src='readmePics/CRD.png' alt='Component relationship diagram for key pages of the app, including home, listed elements, and search details'>
 
 
 ## Technologies (to be) Used
