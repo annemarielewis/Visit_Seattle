@@ -1,6 +1,6 @@
-const { District } = require('../models') //if the district schema is in models index.js I'll be able to pull it here
+const { District } = require('../models/district') //if the district schema is in models index.js I'll be able to pull it here
 
-module.export = {
+module.exports = {
     getAllDistricts,
     getOneDistrict,
     createDistrict,

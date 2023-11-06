@@ -1,6 +1,6 @@
 const { Restaurant } = require('../models')
 
-module.export = {
+module.exports = {
     getAllRestaurants,
     getOneRestaurant,
     createRestaurant,
