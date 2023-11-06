@@ -3,6 +3,7 @@
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "mongoose": "^8.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1"
   },
@@ -10,7 +11,6 @@
   "description": "Visit Seattle and experience all the city has to offer! Search for restaurants, activities, attractions, and lodging, or, if you're in the area and not sure what to do, take our short quiz and get ideas!",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
