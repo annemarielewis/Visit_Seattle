@@ -3,13 +3,25 @@
 
 const { Schema } = require("mongoose");
 
-const CountySchema = new Schema(
+const ActivitySchema = new Schema(
   {
     name: { type: String, required: true },
-    //population2023: { type: Number, required: false },
-    rankinwealth: { type: Number, required: false }, //rank is 1-5 out of the 5 boroughs
+    type: { type: String, required: true },
+    number: { type: String, required: true },
+    address: { type: String, required: true },
+    url: { type: String, required: true },
+    priceRating: { type: String, required: false },
+    familyFriendly: { type: Boolean, required: true },
+    district: {
+      type: Schema.Types.ObjectId,
+      ref: "District._id",
+      required: false,
+    },
+    image: { image: Buffer, required: true },
+    rating: { type: String, required: false },
+    description: { type: String, required: false },
   },
   { timestamps: true }
 );
 
-module.exports = CountySchema;
+module.exports = ActivitySchema;
