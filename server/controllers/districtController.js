@@ -4,6 +4,7 @@ module.export = {
     getAllDistricts,
     getOneDistrict,
     createDistrict,
+    updateDistrict,
     deleteDistrict
 }
 
@@ -45,7 +46,7 @@ async function updateDistrict(req, res) {
         const id = req.params.id
         const district = await District.findByIdAndUpdate(id, req.body, { new: true })
         if (district) {
-            return res.status(200).json(author)
+            return res.status(200).json(district)
         } else {
             throw new Error(error.message)
         }
@@ -59,7 +60,7 @@ async function deleteDistrict(req, res) {
         const id= req.params.id
         const district = await District.findByIdAndDelete(id)
         if (district) {
-            return res.status(200).json(author)
+            return res.status(200).json(district)
         }
         throw new Error(error.message)
     } catch (e) {
