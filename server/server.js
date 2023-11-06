@@ -6,7 +6,7 @@ const cors = require("cors")
 
 const districtController = require('./controllers/districtController')
 const activityController = require('./controllers/activityController')
-const hotelController = require('./controllers/districtController')
+const hotelController = require('./controllers/hotelController')
 const restaurantController = require('./controllers/restaurantController')
 
 const PORT = process.env.PORT || 3001;
