@@ -11,12 +11,35 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 //because we are taking a quick detour out of JS and into Mongo, we need to make sure these are all async functions.
 //That way code-lines won't get thrown out of order
 const main = async () => {
+  const Magnolia = await District.find({
+    name: "Magnolia & Queen Anne",
+  });
+  const CentralSeattle = await District.find({
+    name: "Central Seattle",
+  });
+  const DowntownSeattle = await District.find({
+    name: "Downtown Seattle",
+  });
+  const NorthwestSeattle = await District.find({
+    name: "Northwest Seattle",
+  });
+  const NortheastSeattle = await District.find({
+    name: "Northeast Seattle",
+  });
+  const Delridge = await District.find({
+    name: "West Seattle & Delridge",
+  });
+  const Southeast = await District.find({
+    name: "Southeast Seattle",
+  });
+
   const activities = [
     {
       name: "Seward Park",
       type: "nature",
       number: "(206) 702-3439",
       address: "3801 Discovery Park Blvd",
+      district: Magnolia[0]._id,
       url: "https://www.seattle.gov/parks/recreation/hiking-and-trails",
       priceRating: "free",
       familyFriendly: true,
@@ -38,7 +61,7 @@ const main = async () => {
     },
 
     {
-      name: "Toger Mountain",
+      name: "Tiger Mountain",
       type: "nature",
       number: "N/A",
       address: "N/A",
@@ -51,9 +74,11 @@ const main = async () => {
     },
 
     {
+      name: "Portage Bay",
       type: "nature",
       number: "N/A",
       address: "Central Seattle",
+      district: CentralSeattle[0]._id,
       url: "https://www.outdoorproject.com/united-states/washington/portage-bay-sea-kayaking",
       priceRating: "$$",
       familyFriendly: true,
@@ -66,6 +91,7 @@ const main = async () => {
       type: "nightlife",
       number: "(206) 441-9729",
       address: "2033 6th Ave, Seattle, WA 98121",
+      district: Magnolia[0]._id,
       url: "https://www.jazzalley.com/www-home/",
       priceRating: $$$,
       familyFriendly: false,
@@ -77,6 +103,7 @@ const main = async () => {
       type: "sports",
       number: "(206) 381-7555",
       address: "800 Occidental Ave S, Seattle, WA 98134",
+      district: DowntownSeattle[0]._id,
       url: "https://www.seahawks.com/www-home/",
       priceRating: "$$$$",
       familyFriendly: true,
@@ -86,9 +113,11 @@ const main = async () => {
     },
 
     {
+      name: "Museum of History and Industry",
       type: "history",
       number: "206 324 1126",
       address: "860 Terry Ave N, Seattle WA, 98109",
+      type: Magnolia[0]._id,
       url: "https://mohai.org/",
       priceRating: "$$",
       familyFriendly: true,
@@ -102,6 +131,7 @@ const main = async () => {
       type: "art",
       number: "206.654.3100",
       address: "1300 FIRST AVE, SEATTLE, WA 98101",
+      district: DowntownSeattle[0]._id,
       url: "https://www.seattleartmuseum.org/exhibitions/hokusai?gad_source=1&gclid=Cj0KCQjw-pyqBhDmARIsAKd9XINLj3ZaATHIIEnbxxJsSM8QLHCIe3qC-4tF6AexTGmiJKNRTgu4cQAaAoV9EALw_wcB",
       priceRating: "$$$",
       familyFriendly: true,
@@ -127,6 +157,7 @@ const main = async () => {
       type: "music",
       number: "(206) 441-9729",
       address: "2033 6th Ave, Seattle, WA 98121",
+      district: Magnolia[0]._id,
       url: "https://www.jazzalley.com/www-home/",
       priceRating: "$$$",
       familyFriendly: false,
@@ -139,12 +170,68 @@ const main = async () => {
       type: "landmarks",
       number: "(206) 905-2100",
       address: "400 Broad St, Seattle, WA 98109",
+      district: Magnolia[0]._id,
       url: "https://www.spaceneedle.com/",
       priceRating: "$$",
       familyFriendly: true,
       image: "../assets/spaceNeedle.png",
       description:
         "Constructed in preparation for the 1962 World's Fair, the Space Needle, standing at a height of 605 feet, swiftly emerged as a universally recognized symbol of the city. Once you reach the observation level, accessible via a brief 43-second elevator ride, you'll have the opportunity to witness the original doodle-on-a-napkin idea that gave birth to the Space Needle's design. From the pinnacle, take in panoramic views encompassing Elliott Bay, the majestic Cascade Mountains, and even the imposing Mount Rainier.",
+    },
+
+    {
+      name: "Woodland Park Zoo",
+      type: "nature",
+      number: "(206) 548-2500",
+      address: "5500 Phinney Ave. N., Seattle, WA 98103",
+      district: NorthwestSeattle[0]._id,
+      url: "https://www.zoo.org/",
+      priceRating: "$$",
+      familyFriendly: true,
+      image: "../assets/zoo.png",
+      description:
+        "Explore our exhibits to get close to more than 800 animals and 250 species—including some of the world's most critically endangered.",
+    },
+
+    {
+      name: "WASHINGTON PARK ARBORETUM",
+      type: "nature",
+      number: "(206) 543-8800",
+      address: "5500 Phinney Ave. N., Seattle, WA 98103",
+      district: NortheastSeattle[0]._id,
+      url: "https://botanicgardens.uw.edu/washington-park-arboretum/",
+      priceRating: "free",
+      familyFriendly: true,
+      image: "../assets/washingtonPark.png",
+      description:
+        "The Arboretum is a welcome oasis on the shores of Lake Washington. Jointly managed by the University of Washington Botanic Gardens and the City of Seattle, its 230 acres contain a dynamic assortment of plants, some found nowhere else in the Northwest.",
+    },
+
+    {
+      name: "Alki Beach",
+      type: "nature",
+      number: "(206) 684-4075",
+      address: "2665 Alki Ave SW, Seattle, WA 98116",
+      district: Delridge[0]._id,
+      url: "https://botanicgardens.uw.edu/washington-park-arboretum/",
+      priceRating: "$",
+      familyFriendly: true,
+      image: "../assets/alki.png",
+      description:
+        "Stretching over 2.5 miles, this long beach strip is one of the most popular beaches in Seattle, partly because it was featured in the film 'Sleepless in Seattle'. This nostalgic seaside town is a great escape from the city, just a short water taxi ride from downtown Seattle.",
+    },
+    {
+      name: "Kubota Garden",
+      type: "nature",
+      number: "206-725-5060",
+      address: "10915 51st Ave S. Seattle, WA 98178",
+      district: Southeast[0]._id,
+      url: "https://kubotagarden.org/index.html",
+      priceRating: "$",
+      familyFriendly: true,
+      image: "../assets/kubota.png",
+      description:
+        "20 acres, 11 ponds, 2 red bridges, 140 maple varieties, 30 hydrangea varieties.",
     },
   ];
 };

@@ -29,6 +29,15 @@ app.get('/hotel/:id', hotelController.getOneHotel)
 app.get('/restaurant', restaurantController.getAllRestaurants)
 app.get('/restaurant/:id', restaurantController.getOneRestaurant)
 
+//crud read (for searching activities by type)
+app.get('/nature', activityController.getNatureActivities)
+app.get('/nightlife', activityController.getNightLifeActivities)
+app.get('/history', activityController.getHistoryActivities)
+app.get('/music', activityController.getMusicActivities)
+app.get('/art', activityController.getArtActivities)
+app.get('/sports', activityController.getSportActivities)
+app.get('/landmark', activityController.getLandmarkActivities)
+
 //Crud - Create
 app.post('/district/:id', districtController.createDistrict)
 app.post('/activity/:id', activityController.createActivity)
