@@ -1,19 +1,50 @@
-//purpose = make all of the info on our backend able to be easily processed/read by the front end/client side
-//we will need express for this!
+const express = require("express")
+const db = require("./db/index")
+const logger = require("morgan")
+const bodyParser = require("body-parser")
+const cors = require("cors")
 
-const express = require("express");
-const db = require("./db");
-const logger = require("morgan");
-const bodyParser = require("body-parser");
-const cors = require("cors");
+const districtController = require('./controllers/districtController')
+const activityController = require('./controllers/activityController')
+const hotelController = require('./controllers/districtController')
+const restaurantController = require('./controllers/restaurantController')
 
 const PORT = process.env.PORT || 3001;
 
-const app = express();
 
+const app = express()
 //middleware:
-app.use(logger("dev"));
-app.use(bodyParser.json());
-app.use(cors());
-app.use(express.urlencoded({ extended: true }));
-//middleware here ^//
+app.use(logger("dev"))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors())
+
+//cRud - Read
+app.get('/district', districtController.getAllDistricts)
+app.get('/district/:id', districtController.getOneDistrict)
+app.get('/activity', activityController.getAllActivities)
+app.get('/activity/:id', activityController.getOneActivity)
+app.get('/hotel', hotelController.getAllHotels)
+app.get('/hotel/:id', hotelController.getOneHotel)
+app.get('/restaurant', restaurantController.getAllRestaurants)
+app.get('/restaurant/:id', restaurantController.getOneRestaurant)
+
+//Crud - Create
+app.post('/district/:id', districtController.createDistrict)
+app.post('/activity/:id', activityController.createActivity)
+app.post('/hotel/:id', hotelController.createHotel)
+app.post('/restaurant/:id', restaurantController.createRestaurant)
+
+//crUd - Update
+app.put('/district/:id', districtController.updateDistrict)
+app.put('/activity/:id', activityController.updateActivity)
+app.put('/hotel/:id', hotelController.updateHotel)
+app.put('/restaurant/:id', restaurantController.updateRestaurant)
+
+//cruD - Delete
+app.delete('/district/:id', districtController.deleteDistrict)
+app.delete('/activity/:id', activityController.deleteActivity)
+app.delete('/hotel/:id', hotelController.deleteHotel)
+app.delete('/restaurant/:id', restaurantController.deleteRestaurant)
+
+app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
