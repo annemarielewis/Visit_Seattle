@@ -2,9 +2,9 @@ const { Schema } = require('mongoose')
 const districtSchema = new Schema (
     {
        
-        name: {type: String, required: true},
-        population: {type: Number, required: true},
-        fact: {type: String, required: true}
+        name: {type: String},
+        population: {type: Number},
+        fact: {type: String}
     },
 
     { timestamps: true})

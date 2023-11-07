@@ -3,25 +3,23 @@
 
 const { Schema } = require("mongoose");
 
-const ActivitySchema = new Schema(
+const activitySchema = new Schema(
   {
-    name: { type: String, required: true },
-    type: { type: String, required: true },
-    number: { type: String, required: true },
-    address: { type: String, required: true },
-    url: { type: String, required: true },
-    priceRating: { type: String, required: false },
-    familyFriendly: { type: Boolean, required: true },
+    name: { type: String },
+    type: { type: String },
+    number: { type: String },
+    address: { type: String },
+    url: { type: String },
+    priceRating: { type: String },
+    familyFriendly: { type: Boolean },
     district: {
-      type: Schema.Types.ObjectId,
-      ref: "District._id",
-      required: false,
+      type: Schema.Types.ObjectId
     },
-    image: { image: Buffer, required: true },
-    rating: { type: String, required: false },
-    description: { type: String, required: false },
+    image: { image: String },
+    rating: { type: String },
+    description: { type: String },
   },
   { timestamps: true }
-);
+)
 
-module.exports = ActivitySchema;
+module.exports = activitySchema;
