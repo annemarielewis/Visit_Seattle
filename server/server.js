@@ -39,10 +39,10 @@ app.get('/sports', activityController.getSportActivities)
 app.get('/landmark', activityController.getLandmarkActivities)
 
 //Crud - Create
-app.post('/district/:id', districtController.createDistrict)
-app.post('/activity/:id', activityController.createActivity)
-app.post('/hotel/:id', hotelController.createHotel)
-app.post('/restaurant/:id', restaurantController.createRestaurant)
+app.post('/district', districtController.createDistrict)
+app.post('/activity', activityController.createActivity)
+app.post('/hotel', hotelController.createHotel)
+app.post('/restaurant', restaurantController.createRestaurant)
 
 //crUd - Update
 app.put('/district/:id', districtController.updateDistrict)
