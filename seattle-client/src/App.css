@@ -5,7 +5,11 @@
   text-align: center;
 }
 
-.logo {
+.hotels-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -40,33 +44,3 @@
 .read-the-docs {
   color: #888;
 } */
-
-.card {
-  margin: 2rem;
-}
-
-.card-group {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  /* grid would probably be more useful here... Fewer media queries... */
-}
-
-.routesContainer {
-  margin: 0 auto;
-  padding: 0;
-}
-
-.container {
-  padding: 0;
-}
-
-.detailContainer{
-  display: flex;
-  justify-content: center;
-}
-
-.card-link{
-  border: 2px solid red;
-  /* god how do i move you to the right of this div */
-}
