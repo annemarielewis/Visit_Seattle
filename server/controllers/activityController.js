@@ -43,7 +43,7 @@ async function getNatureActivities(req, res) {
 
 async function getSportActivities(req, res) {
   try {
-    const sportSites = await Activity.find({ type: "sport" });
+    const sportSites = await Activity.find({ type: "sports" });
     if (sportSites.length > 0) {
       res.json(sportSites);
     } else {
@@ -111,7 +111,7 @@ async function getMusicActivities(req, res) {
 
 async function getLandmarkActivities(req, res) {
   try {
-    const landmarkSites = await Activity.find({ type: "landmark" });
+    const landmarkSites = await Activity.find({ type: "landmarks" });
     if (landmarkSites.length > 0) {
       res.json(landmarkSites);
     } else {
