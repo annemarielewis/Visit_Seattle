@@ -5,7 +5,8 @@
     "express": "^4.18.2",
     "mongoose": "^8.0.0",
     "morgan": "^1.10.0",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "reactstrap": "^9.2.0"
   },
   "name": "visit_seattle",
   "description": "Visit Seattle and experience all the city has to offer! Search for restaurants, activities, attractions, and lodging, or, if you're in the area and not sure what to do, take our short quiz and get ideas!",
