@@ -31,7 +31,7 @@ app.get('/restaurant/:id', restaurantController.getOneRestaurant)
 
 //crud read (for searching activities by type)
 app.get('/nature', activityController.getNatureActivities)
-app.get('/nightlife', activityController.getNightLifeActivities)
+app.get('/nightlife', activityController.getNightlifeActivities)
 app.get('/history', activityController.getHistoryActivities)
 app.get('/music', activityController.getMusicActivities)
 app.get('/art', activityController.getArtActivities)
