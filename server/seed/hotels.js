@@ -1,3 +1,7 @@
+const db = require('../db')
+const { Hotel, District } = require('../models')
+
+
 const main = async () => {
   const Magnolia = await District.find({
     name: "Magnolia & Queen Anne",
@@ -116,8 +120,52 @@ const main = async () => {
       phone_number: "(206) 555-7890",
       address: "321 Mansion Lane, Magnolia & Queen Anne",
     },
+    //Central Seattle
+    {
+      name: "Central Retreat",
+      district: CentralSeattle[0]._id,
+      rating: 4,
+      amenities: "Central location, cozy rooms, on-site restaurant",
+      url: "http://www.centralretreat.com",
+      img: "hotel_image_url_here",
+      phone_number: "(206) 555-2468",
+      address: "123 Central Street, Central District",
+    },
+    //Downtown
+    {
+      name: "Downtown View Hotel",
+      district: DowntownSeattle[0]._id,
+      rating: 3,
+      amenities: "Cityscape views, fitness center, modern rooms",
+      url: "http://www.downtownviewhotel.com",
+      img: "hotel_image_url_here",
+      phone_number: "(206) 555-7890",
+      address: "456 Downtown Avenue, Downtown District",
+    },
+    //Southeast
+    {
+      name: "Southeast Serenity Inn",
+      district: Southeast[0]._id,
+      rating: 5,
+      amenities: "Quiet location, garden, luxury suites",
+      url: "http://www.southeastserenityinn.com",
+      img: "hotel_image_url_here",
+      phone_number: "(206) 555-6543",
+      address: "789 Serene Street, Southeast District",
+    },
+    //delridge
+    {
+      name: "Delridge Retreat",
+      district: Delridge[0]._id,
+      rating: 4,
+      amenities: "Scenic views, outdoor activities, comfortable rooms",
+      url: "http://www.delridgeretreat.com",
+      img: "hotel_image_url_here",
+      phone_number: "(206) 555-6543",
+      address: "111 Delridge Ave, Delridge District"
+    }
   ];
-  // Continue with hotels for other districts...
+  
   await Hotel.insertMany(hotels);
   console.log("created hotels");
 };
