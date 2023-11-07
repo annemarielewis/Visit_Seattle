@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const DistrictSchema = require("./district");
 const ActivitySchema = require("./activity");
 const HotelSchema = require("./hotel");
-const RestaurantSchema = require("./restaraunt");
+const RestaurantSchema = require("./restaurant");
 
 const District = mongoose.model("District", DistrictSchema);
 const Activity = mongoose.model("Activity", ActivitySchema);
