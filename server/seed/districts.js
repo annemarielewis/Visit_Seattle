@@ -8,7 +8,7 @@ const main = async () => {
     {
       name: "Northwest Seattle",
       population: 749256,
-      fact: "Seattle had real-life superheroes, town people put on costumes and tackled crime!",
+      fact: "Seattle had real-life superheroes; town people put on costumes and tackled crime!",
     },
     {
       name: "Northeast Seattle",
@@ -23,7 +23,7 @@ const main = async () => {
     {
       name: "Central Seattle",
       population: 30552,
-      fact: "The Klondike Gold rush contributed to Seattles largest population boom.",
+      fact: "The Klondike Gold rush contributed to Seattle's largest population boom.",
     },
     {
       name: "Downtown Seattle",
