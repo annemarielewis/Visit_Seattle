@@ -26,6 +26,7 @@ export default function RestaurantPage() {
     },[])//this should also run on mount
 
     return restaurant ? ( 
+        <div className='card-details'>
         <Card
             key={restaurant._id}
             style={{ width: '70vw' }}
@@ -75,9 +76,11 @@ export default function RestaurantPage() {
                 >Back to List...</Link>
             </CardBody>
         </Card>
+        </div>
     ) : <div className='err'>
         <p>Hm, something went wrong. Try again in a moment.</p>
         </div>
+        
 }
 
 

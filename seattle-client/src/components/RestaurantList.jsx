@@ -29,7 +29,7 @@ export default function RestaurantList() {
 
     //this return can be turned into a ternary when we get that search bar working in here
     return (
-        <div className='restaurant-list'>
+        <div className='card-list'>
             {restaurants.map((restaurant) =>
             (
                 <Card
