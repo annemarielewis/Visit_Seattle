@@ -25,7 +25,7 @@ export default function HotelPage() {
     }, [id])
 
     return hotel ? (
-        <div className="hotel-details">
+        <div className="card-details">
 
             <Card
                 key={hotel.id}
@@ -45,7 +45,7 @@ export default function HotelPage() {
                     className="mb-2 text-muted"
                     tag="h6"
                     >
-                    Rating: {hotel.rating}
+                    Rating: {hotel.rating}/5
                     </CardSubtitle>
                     <CardText>
                         Address: {hotel.address}<br/>

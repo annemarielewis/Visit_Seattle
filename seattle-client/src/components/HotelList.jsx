@@ -44,7 +44,7 @@ export default function HotelList() {
                 <h2 className="Loading">Loading Please Wait...</h2>
 
             ) : (
-                <div className="hotels-list">
+                <div className="card-list">
                     {hotels.map((hotel, key) => (
                         <Card
                             className="card"
@@ -56,7 +56,7 @@ export default function HotelList() {
                             <img
                                 alt={hotel.name}
                                 //src={hotel.img}
-                                src="../../public/assets/hotelExample.jpg"
+                                src={"/assets/hotelExample.jpg"}
                             />
                             <CardBody>
                                 <CardTitle tag="h5">
