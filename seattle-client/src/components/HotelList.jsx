@@ -40,8 +40,6 @@ export default function HotelList() {
 
     return (
         <div>
-            {/* <SearchBar onSearch={handleSearch} /> */}
-
             {hotels.length === 0 ? (
                 <h2 className="Loading">Loading Please Wait...</h2>
 
@@ -76,8 +74,9 @@ export default function HotelList() {
                             </CardBody>
                         </Card>
                     ))}
-                </div> */}
-            {/* )} */}
+                </div> 
+                )}
         </div>
-    )
+    
+    );
 }
