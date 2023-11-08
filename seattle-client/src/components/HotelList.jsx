@@ -27,7 +27,7 @@ export default function HotelList() {
         //use "searchTerm" within brackets if search bar used
     }, [])
 
-    // let navigate = useNavigate()
+  let navigate = useNavigate()
 
     const showHotelDetails = (key) => {
         // setSelectedHotel(hotel)
