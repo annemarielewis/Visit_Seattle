@@ -1,11 +1,10 @@
 import { useContext, useState, useEffect } from 'react'
-import { DetailsContext } from '../DataContext'
+// import { DetailsContext } from '../DataContext'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../globals'
 // import SearchBar from './SearchBar' to add in later, perhaps
-import { Card, CardBody, CardTitle, CardSubtitle, CloseButton, ListGroup, ListGroupItem } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardSubtitle, ListGroup, ListGroupItem } from 'reactstrap'
 
 export default function RestaurantPage() {
     
