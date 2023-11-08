@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from 'react-router-dom'
 import axios from "axios"
+
 import { BASE_URL } from "../globals"
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
 
@@ -9,8 +10,6 @@ export default function HotelPage() {
     const [hotel, setHotel] = useState(null)
 
     const { id } = useParams()
-
-    
 
     useEffect(() => {
         const getHotelDetails = async () => {
@@ -27,6 +26,7 @@ export default function HotelPage() {
 
     return hotel ? (
         <div className="hotel-details">
+
             <Card
                 key={hotel.id}
                 style={{

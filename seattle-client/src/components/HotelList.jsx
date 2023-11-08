@@ -3,8 +3,8 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { BASE_URL } from '../globals'
 // import SearchBar from "./SearchBar"
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
 
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
 
 export default function HotelList() {
 
@@ -27,7 +27,7 @@ export default function HotelList() {
         //use "searchTerm" within brackets if search bar used
     }, [])
 
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
 
     const showHotelDetails = (key) => {
         // setSelectedHotel(hotel)
@@ -41,8 +41,10 @@ export default function HotelList() {
     return (
         <div>
             {/* <SearchBar onSearch={handleSearch} /> */}
+
             {hotels.length === 0 ? (
                 <h2 className="Loading">Loading Please Wait...</h2>
+
             ) : (
                 <div className="hotels-list">
                     {hotels.map((hotel, key) => (
@@ -74,8 +76,8 @@ export default function HotelList() {
                             </CardBody>
                         </Card>
                     ))}
-                </div>
-            )}
+                </div> */}
+            {/* )} */}
         </div>
     )
 }
