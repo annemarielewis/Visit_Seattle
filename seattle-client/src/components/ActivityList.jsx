@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import ACTIVITY_DATA from "./ActivityData";
+import ACTIVITY_DATA from "./ActivityData"; //WE NEED THIS
 import {
   Card,
   CardBody,
@@ -32,6 +32,7 @@ export default function ActivityList() {
   //OnClick logic to get to specific activity:
   const [selectedActivity, setSelectedActivity] = useState(null);
   //figure out how to do this functionality: WHY DON;T I HAVE TO PUT IT AS ACTIVITY._ID LIKE HOW ITS WRITTEN BELOW IN THE RETURN?
+  let navigate = useNavigate();
   const showActivityDetails = (activityId) => {
     setSelectedActivity(activityId);
     navigate(`/activity/${activityId}`);
