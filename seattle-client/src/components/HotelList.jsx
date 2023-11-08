@@ -48,7 +48,7 @@ export default function HotelList() {
                     {hotels.map((hotel, key) => (
                         <Card
                             className="card"
-                            key={hotel.id}
+                            key={hotel._id}
                             style={{
                                 width: '18rem'
                             }}
