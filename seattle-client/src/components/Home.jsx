@@ -10,10 +10,10 @@ const Home = () => {
           />
         </div>
         <div>
-          <h1>About Seattle</h1>
-          <h2>
-            Lorem Epsom
-          </h2>
+          <h3>About Seattle</h3>
+          <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, soluta ipsa adipisci nemo numquam perspiciatis sit. Laudantium deserunt obcaecati veniam quas ab molestias voluptate fuga? Excepturi laudantium quasi porro quaerat?
+          </p>
         </div>
       </div>
     )

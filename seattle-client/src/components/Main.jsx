@@ -19,8 +19,8 @@ export default function Main() {
                 {/* <Route path='/SearchResults' element={< SearchResults />} />
                 <Route path='/RestaurantList' element={<RestaurantList />} />
                 <Route path='/RestaurantPage' element={<RestaurantPage />} /> */}
-                <Route path='/ActivityList' element={<ActivityList />} />
-                <Route path='/ActivityPage' element={<ActivityPage />} /> 
+                {/* <Route path='/ActivityList' element={<ActivityList />} />
+                <Route path='/ActivityPage' element={<ActivityPage />} />  */}
                 <Route path='/HotelList' element={<HotelList />} />
                 <Route path='/HotelList/:id' element={<HotelPage />} />
                 {/* <Route path='/DistrictList' element={<DistrictList />} /> */}
