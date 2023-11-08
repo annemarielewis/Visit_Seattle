@@ -2,13 +2,13 @@ import { useEffect, useState } from "react"
 import { useParams, Link } from 'react-router-dom'
 import axios from "axios"
 // import { BASE_URL } from "../globals"
-import HOTEL_DATA from './HotelData'
+// import HOTEL_DATA from './HotelData'
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
 
 export default function HotelPage() {
-    const { id } = useParams()
+    // const { id } = useParams()
 
-    const hotel = HOTEL_DATA.find((hotel) => hotel.name === id)
+    // const hotel = HOTEL_DATA.find((hotel) => hotel.name === id)
 
     // useEffect(() => {
     //     const getHotelDetails = async () => {
@@ -26,7 +26,7 @@ export default function HotelPage() {
 
     return hotel ? (
         <div className="hotel-details">
-            <Card
+            {/* <Card
                 key={hotel.name}
                 style={{
                     width: '18rem'
@@ -53,7 +53,7 @@ export default function HotelPage() {
                     </CardText>
                 </CardBody>
             </Card>
-            <Link to="/HotelList">Return to Hotel List</Link>
+            <Link to="/HotelList">Return to Hotel List</Link> */}
         </div>
     ) : <h2 className="Finding">Loading Hotel...</h2>
 }

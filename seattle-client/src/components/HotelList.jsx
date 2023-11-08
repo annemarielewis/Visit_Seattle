@@ -3,14 +3,14 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 // import { BASE_URL } from '../globals'
 // import SearchBar from "./SearchBar"
-import HOTEL_DATA from './HotelData'
+// import HOTEL_DATA from './HotelData'
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
 
 
 export default function HotelList() {
 
-    const [hotels, setHotels] = useState(HOTEL_DATA)
-    const [selectedHotel, setSelectedHotel] = useState(null)
+    // const [hotels, setHotels] = useState(HOTEL_DATA)
+    // const [selectedHotel, setSelectedHotel] = useState(null)
 
     // useEffect(() => {
     //     if (searchTerm) {
@@ -27,12 +27,12 @@ export default function HotelList() {
     //     }
     // }, [searchTerm])
 
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
 
-    const showHotelDetails = (hotel) => {
-        setSelectedHotel(hotel)
-        navigate(`/HotelList/${hotel.name}`)
-    }
+    // const showHotelDetails = (hotel) => {
+    //     setSelectedHotel(hotel)
+    //     navigate(`/HotelList/${hotel.name}`)
+    // }
 
     // const handleSearch = (term) => {
     //     setSearchTerm(term)
@@ -41,7 +41,7 @@ export default function HotelList() {
     return (
         <div>
             {/* <SearchBar onSearch={handleSearch} /> */}
-            {hotels.length === 0 ? (
+            {/* {hotels.length === 0 ? (
                 <h2 className="Loading">Please Enter a Hotel</h2>
             ) : (
                 <div className="hotels-list">
@@ -74,8 +74,8 @@ export default function HotelList() {
                             </CardBody>
                         </Card>
                     ))}
-                </div>
-            )}
+                </div> */}
+            {/* )} */}
         </div>
     )
 }

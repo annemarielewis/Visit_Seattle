@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 
-//cRud - Read
+// cRud - Read
 app.get('/district', districtController.getAllDistricts)
 app.get('/district/:id', districtController.getOneDistrict)
 app.get('/activity', activityController.getAllActivities)
@@ -29,7 +29,7 @@ app.get('/hotel/:id', hotelController.getOneHotel)
 app.get('/restaurant', restaurantController.getAllRestaurants)
 app.get('/restaurant/:id', restaurantController.getOneRestaurant)
 
-//crud read (for searching activities by type)
+// crud read (for searching activities by type)
 app.get('/nature', activityController.getNatureActivities)
 app.get('/nightlife', activityController.getNightlifeActivities)
 app.get('/history', activityController.getHistoryActivities)
