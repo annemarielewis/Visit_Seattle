@@ -70,14 +70,14 @@ html {
   border: 1px solid #66B828;
 }
 
-.hotels-list {
+.card-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 120px;
 }
 
-.hotel-details {
+.card-details {
   display: flex;
   justify-content: center;
   margin-top: 120px;
