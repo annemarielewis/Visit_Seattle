@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
 // import SearchResults from './SearchResults'
-// import RestaurantList from './RestaurantList'
-// import RestaurantPage from './RestaurantPage'
+import RestaurantList from './RestaurantList'
+import RestaurantPage from './RestaurantPage'
 import ActivityList from './ActivityList'
 //import ActivityPage from './ActivityPage'
 import HotelList from './HotelList'
@@ -16,9 +16,9 @@ export default function Main() {
         <div className='routesContainer'>
             <Routes>
                 <Route path='/' element={<Home />} />
-                {/* <Route path='/SearchResults' element={< SearchResults />} />
+                {/* <Route path='/SearchResults' element={< SearchResults />} /> */}
                 <Route path='/RestaurantList' element={<RestaurantList />} />
-                <Route path='/RestaurantPage' element={<RestaurantPage />} /> */}
+                <Route path='/RestaurantList/:id' element={<RestaurantPage />} /> 
                 <Route path='/ActivityList' element={<ActivityList />} />
                 {/* <Route path='/ActivityPage' element={<ActivityPage />} /> */}
                 <Route path='/HotelList' element={<HotelList />} />

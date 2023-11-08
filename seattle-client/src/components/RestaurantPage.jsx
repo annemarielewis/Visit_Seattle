@@ -9,23 +9,34 @@ import { Card, CardBody, CardTitle, CardSubtitle, CloseButton, ListGroup, ListGr
 
 export default function RestaurantPage() {
     
-    const { details, setDetails } = useContext(DetailsContext)
+    const { id } = useParams()
 
-    const clearContext = () => setDetails({})
+    const [restaurant, setRestaurant] = useState(null)
 
-    //need to either get context to persist through a refresh or trigger a redirect back to the list page on refresh... 
+    useEffect(()=>{
+        const getRestaurant = async() =>{
+            try{
+                const result = await axios.get(`${BASE_URL}/restaurant/${id}`)
+                setRestaurant(result.data)
+            } catch (error) {
+                console.error('Error fetching restaurant data.', error)
+                setRestaurant({})
+            }
+        }
+        getRestaurant()
+    },[])//this should also run on mount
 
-    return details ? (
+    return restaurant ? ( 
         <Card
-            key={details._id}
+            key={restaurant._id}
             style={{ width: '70vw' }}
         >
             <CardBody>
                 <CardTitle tag='h5'>
-                    {details.name}
+                    {restaurant.name}
                 </CardTitle>
                 <CardSubtitle className='mb-2 text-muted' tag='h6'>
-                    {(details.cuisine).charAt(0).toUpperCase() + (details.cuisine).slice(1)}
+                    {(restaurant.cuisine).charAt(0).toUpperCase() + (restaurant.cuisine).slice(1)}
                     {/* search can still be case insensitive, but since these are one word we can capitalize the first letter of cultures! */}
                 </CardSubtitle>
                 </CardBody>
@@ -36,22 +47,22 @@ export default function RestaurantPage() {
                 <CardBody>
                     <ListGroup flush>
                         <ListGroupItem>
-                            Type: {details.type}
+                            Type: {restaurant.type}
                         </ListGroupItem>
                         <ListGroupItem>
-                            Value rating: {details.priceRating}/5
+                            Value rating: {restaurant.priceRating}/5
                         </ListGroupItem>
                         <ListGroupItem>
-                            Customer rating: {details.rating}/5
+                            Customer rating: {restaurant.rating}/5
                         </ListGroupItem>
                         <ListGroupItem>
-                            Address: {details.address}
+                            Address: {restaurant.address}
                         </ListGroupItem>
                         <ListGroupItem>
-                            Phone: {details.number}
+                            Phone: {restaurant.number}
                         </ListGroupItem>
                         <ListGroupItem>
-                            <Link to={details.url}>Visit Website</Link>
+                            <Link to={restaurant.url}>Visit Website</Link>
                         </ListGroupItem>
                     </ListGroup>
                 <Link
@@ -68,23 +79,73 @@ export default function RestaurantPage() {
     ) : <div className='err'>
         <p>Hm, something went wrong. Try again in a moment.</p>
         </div>
-        
- 
 }
 
+
+//useContext way (suboptimal because of the refresh issue, so ultimately rejected)
 // export default function RestaurantPage() {
+
+//     console.log()
     
-//     const { id } = useParams()
+    // const { details, setDetails } = useContext(DetailsContext)
+    // const clearContext = () => setDetails({})
 
-//     useEffect(()=>{
-//         const getRestaurant = async() =>{
-//             const result = await axios.get(`${BASE_URL}/restaurant/${id}`)
-//             console.log(result)
-//         }
-//         getRestaurant()
-//     },[])//this should also run on mount
+    //need to either get context to persist through a refresh or trigger a redirect back to the list page on refresh... 
 
-//     return (
-//         <p>fuck</p>
-//     )
+    // return restaurantId ? ( 
+        // <Card
+        //     key={details._id}
+        //     style={{ width: '70vw' }}
+        // >
+        //     <CardBody>
+        //         <CardTitle tag='h5'>
+        //             {details.name}
+        //         </CardTitle>
+        //         <CardSubtitle className='mb-2 text-muted' tag='h6'>
+        //             {(details.cuisine).charAt(0).toUpperCase() + (details.cuisine).slice(1)}
+        //             {/* search can still be case insensitive, but since these are one word we can capitalize the first letter of cultures! */}
+        //         </CardSubtitle>
+        //         </CardBody>
+        //         <img
+        //         alt='picture of a place setting'
+        //         src='/assets/restaurantExample.jpg'
+        //         />
+        //         <CardBody>
+        //             <ListGroup flush>
+        //                 <ListGroupItem>
+        //                     Type: {details.type}
+        //                 </ListGroupItem>
+        //                 <ListGroupItem>
+        //                     Value rating: {details.priceRating}/5
+        //                 </ListGroupItem>
+        //                 <ListGroupItem>
+        //                     Customer rating: {details.rating}/5
+        //                 </ListGroupItem>
+        //                 <ListGroupItem>
+        //                     Address: {details.address}
+        //                 </ListGroupItem>
+        //                 <ListGroupItem>
+        //                     Phone: {details.number}
+        //                 </ListGroupItem>
+        //                 <ListGroupItem>
+        //                     <Link to={details.url}>Visit Website</Link>
+        //                 </ListGroupItem>
+        //             </ListGroup>
+        //         <Link
+        //             to={`/RestaurantList`}
+        //             onClick={() => clearContext()}
+        //             className='btn'
+        //             style={{
+        //                 backgroundColor: 'rgb(110, 117, 124)',
+        //                 color: 'white'
+        //             }}
+        //         >Back to List...</Link>
+        //     </CardBody>
+        // </Card>
+//     ) : <div className='err'>
+//         <p>Hm, something went wrong. Try again in a moment.</p>
+//         </div>
+        
+ 
 // }
+
