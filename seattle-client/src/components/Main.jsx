@@ -5,7 +5,7 @@ import Home from "./Home";
 import RestaurantList from './RestaurantList'
 import RestaurantPage from './RestaurantPage'
 import ActivityList from './ActivityList'
-//import ActivityPage from './ActivityPage'
+import ActivityPage from './ActivityPage'
 import HotelList from './HotelList'
 import HotelPage from './HotelPage'
 
@@ -23,7 +23,7 @@ export default function Main() {
                 <Route path='/RestaurantList' element={<RestaurantList />} />
                 <Route path='/RestaurantList/:id' element={<RestaurantPage />} /> 
                 <Route path='/ActivityList' element={<ActivityList />} />
-                {/* <Route path='/ActivityPage' element={<ActivityPage />} /> */}
+                <Route path='/ActivityList/:id' element={<ActivityPage />} />
                 <Route path='/HotelList' element={<HotelList />} />
                 <Route path='/HotelList/:id' element={<HotelPage />} />
                 <Route path='/admin' element={<ActivityAdd />} />
