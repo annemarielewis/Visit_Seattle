@@ -115,7 +115,7 @@ html {
   z-index: 99;
 }
 
-.form {
+form {
   z-index: 1000;
   margin-top: 150px;
 }
@@ -125,4 +125,17 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.districtMapDiv {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.districtMap {
+  max-height: 60vh;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px rgba(26, 26, 26, 0.8);
+  border: 1px solid #66b828;
 }

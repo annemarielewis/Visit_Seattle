@@ -8,8 +8,7 @@ import ActivityList from './ActivityList'
 import ActivityPage from './ActivityPage'
 import HotelList from './HotelList'
 import HotelPage from './HotelPage'
-
-// import DistrictList from './DistrictList'
+import DistrictList from './DistrictList'
 //will need to add additional routes for CRUD down the road
 import ActivityAdd from "./ActivityAdd";
 
@@ -27,7 +26,7 @@ export default function Main() {
                 <Route path='/HotelList' element={<HotelList />} />
                 <Route path='/HotelList/:id' element={<HotelPage />} />
                 <Route path='/admin' element={<ActivityAdd />} />
-                {/* <Route path='/DistrictList' element={<DistrictList />} /> */}
+                <Route path='/DistrictList' element={<DistrictList />} />
             </Routes>
         </div>
     )
