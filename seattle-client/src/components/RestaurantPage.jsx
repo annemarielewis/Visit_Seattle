@@ -41,8 +41,8 @@ export default function RestaurantPage() {
                 </CardSubtitle>
                 </CardBody>
                 <img
-                alt='picture of a place setting'
-                src='/assets/restaurantExample.jpg'
+                alt={restaurant.name}
+                src={restaurant.img}
                 />
                 <CardBody>
                     <ListGroup flush>

@@ -35,7 +35,7 @@ export default function HotelPage() {
                 >
                 <img
                     alt={hotel.name}
-                    src="/assets/hotelExample.jpg"
+                    src={hotel.img}
                 />
                 <CardBody>
                     <CardTitle tag="h5">

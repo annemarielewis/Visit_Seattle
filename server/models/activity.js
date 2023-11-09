@@ -15,7 +15,7 @@ const activitySchema = new Schema(
     district: {
       type: Schema.Types.ObjectId
     },
-    image: { image: String },
+    image: { type: String },
     rating: { type: String },
     description: { type: String },
   },

@@ -35,7 +35,7 @@ const main = async () => {
       cuisine: 'seafood',
       priceRating: 3,
       url: 'https://www.dukesseafood.com/locations/lake-union/?utm_source=gmb&utm_medium=organic&utm_campaign=gmb-app&utm_content=lake-union',
-      img: 'https://www.dukesseafood.com/',
+      img: 'https://www.dukesseafood.com/wp-content/uploads/2023/11/web-dukes-seafood-clam-chowder-bowl-and-spoon.jpg',
       number: '(206) 382-9963',
       address: '1111 Fairview Ave N, Seattle, WA 98109',
       type: 'dine in'
@@ -47,7 +47,7 @@ const main = async () => {
         cuisine: 'seafood',
         priceRating: 3.5,
         url: 'https://www.rays.com/boathouse/',
-        img: 'https://www.rays.com/boathouse/boathouse-menu/',
+        img: 'https://www.rays.com/wp-content/uploads/2018/04/boathouse_popup.jpg',
         number: '(206) 789-3770',
         address: '6049 Seaview Ave NW, Seattle, WA 98107',
         type: 'tavern'
@@ -59,7 +59,7 @@ const main = async () => {
         cuisine: 'seafood',
         priceRating: 4,
         url: 'https://stanfords.com/locations/northgate/',
-        img: 'https://stanfords.com/about-stanfords/',
+        img: 'https://fastly.4sqi.net/img/general/600x600/oAj_bpoPVG8zwgEQLLdTfKFLcp3o6U77_7gecAvdS9I.jpg',
         number: '(206) 834-6277',
         address: '401 NE Northgate Way Ste 1106, Seattle, WA 98125',
         type: 'dine in'
@@ -83,7 +83,7 @@ const main = async () => {
         cuisine: 'italian',
         priceRating: 4,
         url: 'https://www.serendipitycafeandlounge.com/',
-        img: 'https://togoorder.com/web/3419#/o/2/f/1/m/7388//item',
+        img: 'https://media-cdn.tripadvisor.com/media/photo-s/14/c2/2a/43/img-20180922-185711-largejpg.jpg',
         number: '(206) 282-9866',
         address: '3222 West McGraw Street Seattle, WA 98199',
         type: 'cafe'
@@ -155,7 +155,7 @@ const main = async () => {
         cuisine: 'american',
         priceRating: 4,
         url: 'https://www.thecapitalgrille.com/locations/wa/seattle/seattle/8030?cmpid=br:tcg_ag:ie_ch:dry_ca:TCGGMB_sn:gmb_gt:seattle-wa-8030_pl:locurl_rd:1026',
-        img: 'https://www.thecapitalgrille.com/menu/lunch/entrees',
+        img: 'https://res.cloudinary.com/sagacity/image/upload/c_crop,h_595,w_893,x_0,y_0/c_limit,dpr_2,f_auto,fl_lossy,q_80,w_640/Screen_Shot_2016-07-28_at_12.16.22_PM_jfrdvq.png',
         number: '(206) 382-0900',
         address: '1301 4th Ave, Seattle, WA 98101',
         type: 'dine in'
@@ -275,7 +275,7 @@ const main = async () => {
         cuisine: 'chinese',
         priceRating: 3,
         url: 'https://www.taitungrestaurant.com/',
-        img: 'https://www.taitungrestaurant.com/menu',
+        img: 'https://images.seattletimes.com/wp-content/uploads/2018/12/12212018_lede_130849.jpg?d=1560x1040',
         number: '(206) 622-7372',
         address: '655 S King St, Seattle, WA 98104',
         type: 'dine in'   
@@ -293,6 +293,7 @@ const main = async () => {
         type: 'counter-service'
     }
   ];
+  await Restaurant.deleteMany()
   await Restaurant.insertMany(restaurantList) 
   console.log('Restaurants Created!')
 };

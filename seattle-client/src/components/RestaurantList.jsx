@@ -37,8 +37,8 @@ export default function RestaurantList() {
                     style={{ width: '18rem' }}
                 >
                     <img
-                        alt='picture of a place setting'
-                        src='assets/restaurantExample.jpg'
+                        alt={restaurant.name}
+                        src={restaurant.img}
                     />
                     <CardBody>
                         <CardTitle tag='h5'>
