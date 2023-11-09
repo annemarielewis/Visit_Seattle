@@ -17,8 +17,6 @@ export default function addActivity() {
 
   const [formState, setFormState] = useState(initialState);
 
-  const [deleteState, setDeleteState] = useState(initialState);
-
   const handleChange = (event) =>
     setFormState({ ...formState, [event.target.id]: event.target.value });
 
@@ -67,21 +65,8 @@ export default function addActivity() {
     }
   };
 
-  const handleDelete = async (event) => {
-    event.preventDefault();
-    console.log(deleteState);
-    const dataIDToDelete = deleteState.id;
-    console.log(dataIDToDelete);
-    try {
-      axios.delete(`http://localhost:3001/deleteactivity/${dataIDToDelete}`);
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
-  };
-
   return (
     <>
-      {/* ADD */}
       <div className="add">
         <h1>Add an Activity</h1>
         <form className="grid" onSubmit={handleSubmit}>
