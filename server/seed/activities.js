@@ -94,7 +94,7 @@ const main = async () => {
       number: "(206) 441-9729",
       address: "2033 6th Ave, Seattle, WA 98121",
       url: "https://www.jazzalley.com/www-home/",
-      priceRating: '$$$',
+      priceRating: "$$$",
       familyFriendly: false,
       district: Magnolia[0]._id,
       image: "../assets/Jazz.png",
@@ -237,10 +237,12 @@ const main = async () => {
         "20 acres, 11 ponds, 2 red bridges, 140 maple varieties, 30 hydrangea varieties.",
     },
   ];
+
   await Activity.deleteMany()
   await Activity.insertMany(activities)
   console.log('activities added')
 };
+
 const run = async () => {
   //runs our main function and awaits for the data to populate
   await main();

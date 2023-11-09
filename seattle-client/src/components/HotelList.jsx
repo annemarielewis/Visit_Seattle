@@ -3,8 +3,8 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { BASE_URL } from '../globals'
 // import SearchBar from "./SearchBar"
-
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
+import HotelOverlay from './Overlay'
 
 export default function HotelList() {
 
@@ -27,11 +27,15 @@ export default function HotelList() {
         //use "searchTerm" within brackets if search bar used
     }, [])
 
-  let navigate = useNavigate()
+//   let navigate = useNavigate()
 
-    const showHotelDetails = (key) => {
-        // setSelectedHotel(hotel)
-        navigate(`/HotelList/${key}`)
+    const showHotelDetails = (hotel) => {
+        setSelectedHotel(hotel)
+        // navigate(`/HotelList/${key}`)
+    }
+
+    const closeHotelDetails = (hotel) => {
+        setSelectedHotel(null)
     }
 
     // const handleSearch = (term) => {
@@ -68,7 +72,7 @@ export default function HotelList() {
                                 >
                                 Rating: {hotel.rating}
                                 </CardSubtitle>
-                                <Button onClick={() => showHotelDetails(key)}>
+                                <Button onClick={() => showHotelDetails(hotel)}>
                                     Details
                                 </Button>
                             </CardBody>
@@ -76,7 +80,9 @@ export default function HotelList() {
                     ))}
                 </div> 
                 )}
+                {selectedHotel && (
+                    <HotelOverlay hotel={selectedHotel} onClose={closeHotelDetails}/>
+                )}
         </div>
-    
     );
 }

@@ -1,15 +1,34 @@
-import { useEffect, useState } from "react"
-import { useParams, Link } from 'react-router-dom'
-import axios from "axios"
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
 
-import { BASE_URL } from "../globals"
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
+import { BASE_URL } from "../globals";
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+  Button,
+} from "reactstrap";
 
 export default function HotelPage() {
+  const [hotel, setHotel] = useState(null);
 
-    const [hotel, setHotel] = useState(null)
+  const { id } = useParams();
 
-    const { id } = useParams()
+  useEffect(() => {
+    const getHotelDetails = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/hotel`);
+        setHotel(response.data[id]);
+      } catch (error) {
+        console.error("Error fetching hotel details:", error);
+        setHotel(null);
+      }
+    };
+    getHotelDetails();
+  }, [id]);
 
     useEffect(() => {
         const getHotelDetails = async () => {

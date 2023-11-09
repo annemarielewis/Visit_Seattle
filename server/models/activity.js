@@ -13,13 +13,13 @@ const activitySchema = new Schema(
     priceRating: { type: String },
     familyFriendly: { type: Boolean },
     district: {
-      type: Schema.Types.ObjectId
+      type: Schema.Types.ObjectId,
     },
     image: { type: String },
     rating: { type: String },
     description: { type: String },
   },
   { timestamps: true }
-)
+);
 
 module.exports = activitySchema;

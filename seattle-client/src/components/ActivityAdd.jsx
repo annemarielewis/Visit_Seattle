@@ -5,6 +5,14 @@ export default function addActivity() {
   const initialState = {
     name: "",
     type: "",
+    number: "",
+    address: "",
+    url: "",
+    priceRating: "",
+    familyFriendly: "",
+    district: "",
+    image: "",
+    description: "",
   };
 
   const [formState, setFormState] = useState(initialState);
@@ -22,6 +30,14 @@ export default function addActivity() {
     const dataToAdd = {
       name: formState.name,
       type: formState.type,
+      number: formState.number,
+      address: formState.address,
+      url: formState.url,
+      priceRating: formState.priceRating,
+      familyFriendly: formState.familyFriendly,
+      district: formState.district,
+      image: formState.image,
+      description: formState.description,
     };
 
     try {
@@ -64,6 +80,78 @@ export default function addActivity() {
           rows="2"
           onChange={handleChange}
           value={formState.type}
+        />
+        <label htmlFor="number">Number:</label>
+        <input
+          name=""
+          id="number"
+          cols="30"
+          rows="2"
+          onChange={handleChange}
+          value={formState.number}
+        />
+        <label htmlFor="address">Address:</label>
+        <input
+          name=""
+          id="address"
+          cols="30"
+          rows="2"
+          onChange={handleChange}
+          value={formState.address}
+        />
+        <label htmlFor="url">URL:</label>
+        <input
+          name=""
+          id="url"
+          cols="30"
+          rows="2"
+          onChange={handleChange}
+          value={formState.url}
+        />
+        <label htmlFor="priceRating">Price Rating:</label>
+        <input
+          name=""
+          id="priceRating"
+          cols="30"
+          rows="2"
+          onChange={handleChange}
+          value={formState.priceRating}
+        />
+        <label htmlFor="familyFriendly">Family Friendly:</label>
+        <input
+          name=""
+          id="familyFriendly"
+          cols="30"
+          rows="2"
+          onChange={handleChange}
+          value={formState.familyFriendly}
+        />
+        <label htmlFor="district">District:</label>
+        <input
+          name=""
+          id="district"
+          cols="30"
+          rows="2"
+          onChange={handleChange}
+          value={formState.district}
+        />
+        <label htmlFor="image">Image:</label>
+        <input
+          name=""
+          id="image"
+          cols="30"
+          rows="2"
+          onChange={handleChange}
+          value={formState.image}
+        />
+        <label htmlFor="description">Description:</label>
+        <input
+          name=""
+          id="description"
+          cols="30"
+          rows="2"
+          onChange={handleChange}
+          value={formState.description}
         />
         <button type="submit">Send</button>
       </form>
