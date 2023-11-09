@@ -4,13 +4,13 @@ import { useState } from "react";
 export default function addActivity() {
   const initialState = {
     name: "",
-    type: "",
+    type: "nature",
     number: "",
     address: "",
     url: "",
-    priceRating: "",
-    familyFriendly: "",
-    district: "",
+    priceRating: "free",
+    familyFriendly: false,
+    district: "Northwest Seattle",
     image: "",
     description: "",
   };
@@ -20,13 +20,16 @@ export default function addActivity() {
   const handleChange = (event) =>
     setFormState({ ...formState, [event.target.id]: event.target.value });
 
-  console.log(formState);
+    //can't get 'value' from a checkbox, have to get whether or not it's checked to access the boolean - so this is a specific change handler for the checkbox
+    const handleCheckbox = (event) =>{
+    setFormState({ ...formState, [event.target.id]: event.target.checked })};
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     console.log(formState);
     //functionality for adding to database: Prepare the data to be sent to the backend
+    //hold the phone, I think you could just use formState instead of an entirely new object
     const dataToAdd = {
       name: formState.name,
       type: formState.type,
@@ -73,15 +76,21 @@ export default function addActivity() {
         />
 
         <label htmlFor="type">Type:</label>
-        <input
-          name=""
-          id="type"
-          cols="30"
-          rows="2"
+        < select
+          id='type'
           onChange={handleChange}
           value={formState.type}
-        />
-        <label htmlFor="number">Number:</label>
+        >
+          <option value='nature' >Nature</option>
+          <option value='nightlife' >Nightlife</option>
+          <option value='sports' >Sports</option>
+          <option value='history' >History</option>
+          <option value='art' >Art</option>
+          <option value='music' >Music</option>
+          <option value='landmarks' >Landmarks</option>
+        </select>
+
+        <label htmlFor="number">Phone number:</label>
         <input
           name=""
           id="number"
@@ -90,6 +99,7 @@ export default function addActivity() {
           onChange={handleChange}
           value={formState.number}
         />
+
         <label htmlFor="address">Address:</label>
         <input
           name=""
@@ -99,6 +109,7 @@ export default function addActivity() {
           onChange={handleChange}
           value={formState.address}
         />
+
         <label htmlFor="url">URL:</label>
         <input
           name=""
@@ -108,34 +119,44 @@ export default function addActivity() {
           onChange={handleChange}
           value={formState.url}
         />
+
         <label htmlFor="priceRating">Price Rating:</label>
-        <input
-          name=""
-          id="priceRating"
-          cols="30"
-          rows="2"
+        <select
+          id='priceRating'
           onChange={handleChange}
           value={formState.priceRating}
-        />
-        <label htmlFor="familyFriendly">Family Friendly:</label>
-        <input
-          name=""
-          id="familyFriendly"
-          cols="30"
-          rows="2"
-          onChange={handleChange}
-          value={formState.familyFriendly}
-        />
+        >
+          <option value='free'>Free</option>
+          <option value='$'>$</option>
+          <option value='$$'>$$</option>
+          <option value='$$$'>$$$</option>
+        </select>
+
+        <label htmlFor="familyFriendly">
+          Family Friendly: <input
+            id='familyFriendly'
+            type='checkbox'
+            onChange={handleCheckbox}
+            checked={formState.familyFriendly}
+          />
+        </label>
+
         <label htmlFor="district">District:</label>
-        <input
-          name=""
+        <select
           id="district"
-          cols="30"
-          rows="2"
           onChange={handleChange}
           value={formState.district}
-        />
-        <label htmlFor="image">Image:</label>
+        >
+          <option value='654a5d9082ebbef4acc730a4'>Northwest Seattle</option>
+          <option value='654a5d9082ebbef4acc730a5'>Northeast Seattle</option>
+          <option value='654a5d9082ebbef4acc730a6'>Magnolia & Queen Anne</option>
+          <option value='654a5d9082ebbef4acc730a7'>Central Seattle</option>
+          <option value='654a5d9082ebbef4acc730a8'>Downtown Seattle</option>
+          <option value='654a5d9082ebbef4acc730a9'>West Seattle & Delridge</option>
+          <option value='654a5d9082ebbef4acc730aa'>Southeast Seattle</option>
+        </select>
+
+        <label htmlFor="image">Image url:</label>
         <input
           name=""
           id="image"
@@ -144,6 +165,7 @@ export default function addActivity() {
           onChange={handleChange}
           value={formState.image}
         />
+
         <label htmlFor="description">Description:</label>
         <input
           name=""
