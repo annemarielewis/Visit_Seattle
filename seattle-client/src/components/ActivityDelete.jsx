@@ -9,17 +9,23 @@ export default function deleteActivity() {
   const [deleteState, setDeleteState] = useState(initialState);
 
   const handleChangeDelete = (event) =>
-    setDeleteState({...deleteState, [event.target.id]: event.target.value });
+    setDeleteState({ ...deleteState, [event.target.id]: event.target.value });
 
   const handleDelete = async (event) => {
     event.preventDefault();
     console.log(deleteState);
     const dataIDToDelete = deleteState.id;
-    console.log(dataIDToDelete);
+    console.log(`data id: ${dataIDToDelete}`);
+
     try {
-      axios.delete(`http://localhost:3001/deleteactivity/${dataIDToDelete}`);
+      console.log("help");
+      await axios.delete(
+        `http://localhost:3001/deleteactivity/${dataIDToDelete}`
+      );
+      console.log("me");
+      setDeleteState(initialState);
     } catch (error) {
-      console.error("An error occurred:", error);
+      console.error("Activity not found:", error);
     }
   };
   return (

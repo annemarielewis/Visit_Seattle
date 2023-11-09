@@ -5,6 +5,7 @@ export default function Admin () {
     return (
 <>
     <ActivityAdd/>
+
 </>
     )
 }
