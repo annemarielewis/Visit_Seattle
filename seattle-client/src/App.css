@@ -9,7 +9,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-image: url('../../public/assets/SeattleBackground.png');
+  background-image: url('/assets/SeattleBackground.png');
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
