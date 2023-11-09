@@ -1,79 +1,23 @@
-import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import axios from "axios";
+import React from 'react'
+import './Overlay.css'
 
-import { BASE_URL } from "../globals";
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  Button,
-} from "reactstrap";
-
-export default function HotelPage() {
-  const [hotel, setHotel] = useState(null);
-
-  const { id } = useParams();
-
-  useEffect(() => {
-    const getHotelDetails = async () => {
-      try {
-        const response = await axios.get(`${BASE_URL}/hotel`);
-        setHotel(response.data[id]);
-      } catch (error) {
-        console.error("Error fetching hotel details:", error);
-        setHotel(null);
-      }
-    };
-    getHotelDetails();
-  }, [id]);
-
-    useEffect(() => {
-        const getHotelDetails = async () => {
-            try {
-                const response = await axios.get(`${BASE_URL}/hotel`)
-                setHotel(response.data[id])
-            } catch (error) {
-                console.error("Error fetching hotel details:", error);
-                setHotel(null)
-            }
-        }
-        getHotelDetails()
-    }, [id])
-
-    return hotel ? (
-        <div className="card-details">
-
-            <Card
-                key={hotel.id}
-                style={{
-                    width: '18rem'
-                }}
-                >
-                <img
-                    alt={hotel.name}
-                    src={hotel.img}
-                />
-                <CardBody>
-                    <CardTitle tag="h5">
-                        {hotel.name}
-                    </CardTitle>
-                    <CardSubtitle
-                    className="mb-2 text-muted"
-                    tag="h6"
-                    >
-                    Rating: {hotel.rating}/5
-                    </CardSubtitle>
-                    <CardText>
-                        Address: {hotel.address}<br/>
-                        Phone: {hotel.phone_number}<br/>
-                        Amenities: {hotel.amenities}<br/>
-                    </CardText>
-                </CardBody>
-                <Link to="/HotelList">Close X</Link>
-            </Card>
+export default function HotelPage({ hotel, onClose }) {
+    return (
+        <div className="card-details-overlay">
+            <div className="card-details-content">
+                <button className='close-button' onClick={onClose}>
+                    Close X
+                </button>
+                <div className="details-container">
+                    <img src={hotel.img} alt={hotel.name} />
+                    <h3>{hotel.name}</h3>
+                    <p>Rating: {hotel.rating}/5</p>
+                    <p>Address: {hotel.address}</p>
+                    <p>Phone: {hotel.phone_number}</p>
+                    <p>Amenities: {hotel.amenities}</p>
+                    <a href={hotel.url}>Visit {hotel.name}</a>
+                </div>
+            </div>
         </div>
-    ) : <h2 className="Finding">Loading Hotel...</h2>
+    )
 }

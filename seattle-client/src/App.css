@@ -96,6 +96,11 @@ html {
   margin: 20px;
 }
 
+.card img {
+  max-width: 300px;
+  max-height: 200px;
+}
+
 .Footer,
 .Team {
   background-color: #002142;

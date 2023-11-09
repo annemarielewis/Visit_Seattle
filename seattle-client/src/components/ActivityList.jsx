@@ -1,66 +1,56 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  Button,
-  Spinner,
-} from "reactstrap";
+import { useState, useEffect } from "react"
+import axios from "axios"
+import { BASE_URL } from '../globals'
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
+import ActivityPage from './ActivityPage'
 
-import { Link } from "react-router-dom";
-
-//Initiate function for activities:
 export default function ActivityList() {
-  const [activities, setActivities] = useState([]);
-  //UseEffect to define when the activities will load (on page load for this component)
-  useEffect(() => {
-    const getActivities = async () => {
-      const response = await axios.get(`http://localhost:3001/activity`);
-      console.log(response.data);
-      setActivities(response.data);
-    };
-    getActivities();
-  }, []);
-  console.log(activities);
 
-  //OnClick logic to get to specific activity:
-  const [selectedActivity, setSelectedActivity] = useState(null);
-  //figure out how to do this functionality: WHY DON;T I HAVE TO PUT IT AS ACTIVITY._ID LIKE HOW ITS WRITTEN BELOW IN THE RETURN?
-  let navigate = useNavigate();
-  const showActivityDetails = (activityId) => {
-    setSelectedActivity(activityId);
-    navigate(`/activity/${activityId}`);
-    console.log(selectedActivity);
-  };
+    const [activities, setActivities] = useState([])
+    const [selectedActivity, setSelectedActivity] = useState(null)
 
-  //return statement for the html to display the activities:
-  return activities ? (
-    <div className="activities">
-      <h1 className="page-title">Activities:</h1>
-      {activities.map((activity) => (
-        <Link to={`/activity/${activity._id}`} key={activity._id}>
-          <Card key={activity._id} style={{ width: "18rem" }}>
-            <img alt="Sample" src={activity.image} />
-            <CardBody>
-              <CardTitle tag="h5">{activity.name}</CardTitle>
-              <CardSubtitle className="mb-2 text-muted" tag="h6">
-                Type of Activity: {activity.type}
-              </CardSubtitle>
-              <Button onClick={() => showActivityDetails(activity._id)}>
-                Details
-              </Button>
-            </CardBody>
-          </Card>
-        </Link>
-      ))}
-    </div>
-  ) : (
-    <Spinner className="m-5" color="primary">
-      Loading...
-    </Spinner>
-  );
+    useEffect(() => {
+            const getActivities = async () => {
+                const response = await axios.get(`${BASE_URL}/activity`)
+                setActivities(response.data)
+                console.log(response)
+            }
+            getActivities()
+    }, [])
+
+    const showActivityDetails = (activity) => {
+        setSelectedActivity(activity)
+    }
+
+    const closeActivityDetails = (activity) => {
+        setSelectedActivity(null)
+    }
+
+    return (
+        <div>
+            {activities.length === 0 ? (
+                <h2 className="Loading">Loading Please Wait...</h2>
+            ) : (
+                <div className="card-list">
+                    {activities.map((activity, key) => (
+                        <Card className="card" key={activity._id} style={{width: '18rem'}}>
+                            <img alt={activity.name} src={activity.image}/>
+                            <CardBody>
+                                <CardTitle tag="h5">{activity.name}</CardTitle>
+                                <CardSubtitle className="mb-2 text-muted" tag="h6">
+                                    Type: {activity.type}
+                                </CardSubtitle>
+                                <Button onClick={() => showActivityDetails(activity)}>
+                                    Details
+                                </Button>
+                            </CardBody>
+                        </Card>
+                    ))}
+                </div> 
+                )}
+                {selectedActivity && (
+                    <ActivityPage activity={selectedActivity} onClose={closeActivityDetails}/>
+                )}
+        </div>
+    );
 }
