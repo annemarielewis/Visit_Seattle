@@ -17,12 +17,17 @@ export default function addActivity() {
 
   const [formState, setFormState] = useState(initialState);
 
+  const [deleteState, setDeleteState] = useState(initialState);
+
   const handleChange = (event) =>
     setFormState({ ...formState, [event.target.id]: event.target.value });
 
     //can't get 'value' from a checkbox, have to get whether or not it's checked to access the boolean - so this is a specific change handler for the checkbox
     const handleCheckbox = (event) =>{
-    setFormState({ ...formState, [event.target.id]: event.target.checked })};
+    setFormState({ ...formState, [event.target.id]: event.target.checked })}
+    
+  const handleChangeDelete = (event) =>
+    setDeleteState({ ...deleteState, [event.target.id]: event.target.value });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -62,20 +67,25 @@ export default function addActivity() {
     }
   };
 
+  const handleDelete = async (event) => {
+    event.preventDefault();
+    console.log(deleteState);
+    const dataIDToDelete = deleteState.id;
+    console.log(dataIDToDelete);
+    try {
+      axios.delete(`http://localhost:3001/deleteactivity/${dataIDToDelete}`);
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  };
+
   return (
     <>
-      <form className="form" onSubmit={handleSubmit}>
-        <label htmlFor="name">Activity:</label>
-        <input
-          name=""
-          id="name"
-          cols="30"
-          rows="1"
-          onChange={handleChange}
-          value={formState.activity}
-        />
-
-        <label htmlFor="type">Type:</label>
+      {/* ADD */}
+      <div className="add">
+        <h1>Add an Activity</h1>
+        <form className="grid" onSubmit={handleSubmit}>
+          <label htmlFor="type">Type:</label>
         < select
           id='type'
           onChange={handleChange}
@@ -177,6 +187,28 @@ export default function addActivity() {
         />
         <button type="submit">Send</button>
       </form>
+    </div> 
+
+        {/* DELETE */}
+        {/* <div className="delete">
+          <h1>Delete an Activity</h1>
+          <form className="grid" onSubmit={handleDelete}>
+            <label htmlFor="id">Activity ID:</label>
+            <input
+              type="text"
+              id="id"
+              name=""
+              onChange={handleChangeDelete}
+              value={formState.id}
+              required
+            />
+            <br></br>
+            <button type="submit">Delete Activity</button>
+          </form>
+        </div> */}
+
+        {/* UPDATE */}
+
     </>
   );
 }

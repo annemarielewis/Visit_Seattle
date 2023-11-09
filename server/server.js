@@ -52,7 +52,7 @@ app.put('/restaurant/:id', restaurantController.updateRestaurant)
 
 //cruD - Delete
 app.delete('/district/:id', districtController.deleteDistrict)
-app.delete('/activity/:id', activityController.deleteActivity)
+app.delete('/deleteactivity/:id', activityController.deleteActivity)
 app.delete('/hotel/:id', hotelController.deleteHotel)
 app.delete('/restaurant/:id', restaurantController.deleteRestaurant)
 
