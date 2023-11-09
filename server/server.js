@@ -9,7 +9,7 @@ const activityController = require("./controllers/activityController");
 const hotelController = require("./controllers/hotelController");
 const restaurantController = require("./controllers/restaurantController");
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 //middleware:
