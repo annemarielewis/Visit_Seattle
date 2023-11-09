@@ -9,7 +9,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-image: url('/assets/SeattleBackground.png');
+  background-image: url("/assets/SeattleBackground.png");
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -113,4 +113,11 @@ html {
 .form {
   z-index: 1000;
   margin-top: 150px;
+}
+
+.flex {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
