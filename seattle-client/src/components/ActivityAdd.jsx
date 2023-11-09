@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 export default function addActivity() {
   const initialState = {
     name: "",
@@ -173,6 +173,9 @@ export default function addActivity() {
           <button type="submit">Send</button>
         </form>
       </div>
+      <Link to="/deleteactivity/:id">
+        <button>Delete Activity</button>
+      </Link>
     </>
   );
 }

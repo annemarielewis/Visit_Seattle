@@ -9,7 +9,7 @@ export default function deleteActivity() {
   const [deleteState, setDeleteState] = useState(initialState);
 
   const handleChangeDelete = (event) =>
-    setDeleteState({ ...deleteState, [event.target.id]: event.target.value });
+    setDeleteState({...deleteState, [event.target.id]: event.target.value });
 
   const handleDelete = async (event) => {
     event.preventDefault();
