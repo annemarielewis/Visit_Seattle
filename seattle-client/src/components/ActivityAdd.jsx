@@ -177,7 +177,7 @@ export default function addActivity() {
         </form>
 
         {/* DELETE */}
-        <div className="delete">
+        {/* <div className="delete">
           <h1>Delete an Activity</h1>
           <form className="grid" onSubmit={handleDelete}>
             <label htmlFor="id">Activity ID:</label>
@@ -192,7 +192,7 @@ export default function addActivity() {
             <br></br>
             <button type="submit">Delete Activity</button>
           </form>
-        </div>
+        </div> */}
 
         {/* UPDATE */}
       </div>
