@@ -31,7 +31,7 @@ export default function DistrictList() {
                                 width: '20rem'
                             }}
                         >
-                            <img alt='a notable landmark in this district' src='' />
+                            <img alt='a notable landmark in this district' src={district.img} />
                             <CardBody>
                                 <CardTitle tag='h5'>
                                     {district.name}
