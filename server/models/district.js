@@ -4,7 +4,8 @@ const districtSchema = new Schema (
        
         name: {type: String},
         population: {type: Number},
-        fact: {type: String}
+        fact: {type: String},
+        img: {type: String}
     },
 
     { timestamps: true})
