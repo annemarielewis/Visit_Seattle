@@ -17,17 +17,13 @@ export default function addActivity() {
 
   const [formState, setFormState] = useState(initialState);
 
-  const [deleteState, setDeleteState] = useState(initialState);
-
   const handleChange = (event) =>
     setFormState({ ...formState, [event.target.id]: event.target.value });
 
-    //can't get 'value' from a checkbox, have to get whether or not it's checked to access the boolean - so this is a specific change handler for the checkbox
-    const handleCheckbox = (event) =>{
-    setFormState({ ...formState, [event.target.id]: event.target.checked })}
-    
-  const handleChangeDelete = (event) =>
-    setDeleteState({ ...deleteState, [event.target.id]: event.target.value });
+  //can't get 'value' from a checkbox, have to get whether or not it's checked to access the boolean - so this is a specific change handler for the checkbox
+  const handleCheckbox = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.checked });
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -67,18 +63,6 @@ export default function addActivity() {
     }
   };
 
-  const handleDelete = async (event) => {
-    event.preventDefault();
-    console.log(deleteState);
-    const dataIDToDelete = deleteState.id;
-    console.log(dataIDToDelete);
-    try {
-      axios.delete(`http://localhost:3001/deleteactivity/${dataIDToDelete}`);
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
-  };
-
   return (
     <>
       {/* ADD */}
@@ -86,129 +70,109 @@ export default function addActivity() {
         <h1>Add an Activity</h1>
         <form className="grid" onSubmit={handleSubmit}>
           <label htmlFor="type">Type:</label>
-        < select
-          id='type'
-          onChange={handleChange}
-          value={formState.type}
-        >
-          <option value='nature' >Nature</option>
-          <option value='nightlife' >Nightlife</option>
-          <option value='sports' >Sports</option>
-          <option value='history' >History</option>
-          <option value='art' >Art</option>
-          <option value='music' >Music</option>
-          <option value='landmarks' >Landmarks</option>
-        </select>
+          <select id="type" onChange={handleChange} value={formState.type}>
+            <option value="nature">Nature</option>
+            <option value="nightlife">Nightlife</option>
+            <option value="sports">Sports</option>
+            <option value="history">History</option>
+            <option value="art">Art</option>
+            <option value="music">Music</option>
+            <option value="landmarks">Landmarks</option>
+          </select>
 
-        <label htmlFor="number">Phone number:</label>
-        <input
-          name=""
-          id="number"
-          cols="30"
-          rows="2"
-          onChange={handleChange}
-          value={formState.number}
-        />
-
-        <label htmlFor="address">Address:</label>
-        <input
-          name=""
-          id="address"
-          cols="30"
-          rows="2"
-          onChange={handleChange}
-          value={formState.address}
-        />
-
-        <label htmlFor="url">URL:</label>
-        <input
-          name=""
-          id="url"
-          cols="30"
-          rows="2"
-          onChange={handleChange}
-          value={formState.url}
-        />
-
-        <label htmlFor="priceRating">Price Rating:</label>
-        <select
-          id='priceRating'
-          onChange={handleChange}
-          value={formState.priceRating}
-        >
-          <option value='free'>Free</option>
-          <option value='$'>$</option>
-          <option value='$$'>$$</option>
-          <option value='$$$'>$$$</option>
-        </select>
-
-        <label htmlFor="familyFriendly">
-          Family Friendly: <input
-            id='familyFriendly'
-            type='checkbox'
-            onChange={handleCheckbox}
-            checked={formState.familyFriendly}
+          <label htmlFor="number">Phone number:</label>
+          <input
+            name=""
+            id="number"
+            cols="30"
+            rows="2"
+            onChange={handleChange}
+            value={formState.number}
           />
-        </label>
 
-        <label htmlFor="district">District:</label>
-        <select
-          id="district"
-          onChange={handleChange}
-          value={formState.district}
-        >
-          <option value='654a5d9082ebbef4acc730a4'>Northwest Seattle</option>
-          <option value='654a5d9082ebbef4acc730a5'>Northeast Seattle</option>
-          <option value='654a5d9082ebbef4acc730a6'>Magnolia & Queen Anne</option>
-          <option value='654a5d9082ebbef4acc730a7'>Central Seattle</option>
-          <option value='654a5d9082ebbef4acc730a8'>Downtown Seattle</option>
-          <option value='654a5d9082ebbef4acc730a9'>West Seattle & Delridge</option>
-          <option value='654a5d9082ebbef4acc730aa'>Southeast Seattle</option>
-        </select>
+          <label htmlFor="address">Address:</label>
+          <input
+            name=""
+            id="address"
+            cols="30"
+            rows="2"
+            onChange={handleChange}
+            value={formState.address}
+          />
 
-        <label htmlFor="image">Image url:</label>
-        <input
-          name=""
-          id="image"
-          cols="30"
-          rows="2"
-          onChange={handleChange}
-          value={formState.image}
-        />
+          <label htmlFor="url">URL:</label>
+          <input
+            name=""
+            id="url"
+            cols="30"
+            rows="2"
+            onChange={handleChange}
+            value={formState.url}
+          />
 
-        <label htmlFor="description">Description:</label>
-        <input
-          name=""
-          id="description"
-          cols="30"
-          rows="2"
-          onChange={handleChange}
-          value={formState.description}
-        />
-        <button type="submit">Send</button>
-      </form>
-    </div> 
+          <label htmlFor="priceRating">Price Rating:</label>
+          <select
+            id="priceRating"
+            onChange={handleChange}
+            value={formState.priceRating}
+          >
+            <option value="free">Free</option>
+            <option value="$">$</option>
+            <option value="$$">$$</option>
+            <option value="$$$">$$$</option>
+          </select>
 
-        {/* DELETE */}
-        {/* <div className="delete">
-          <h1>Delete an Activity</h1>
-          <form className="grid" onSubmit={handleDelete}>
-            <label htmlFor="id">Activity ID:</label>
+          <label htmlFor="familyFriendly">
+            Family Friendly:{" "}
             <input
-              type="text"
-              id="id"
-              name=""
-              onChange={handleChangeDelete}
-              value={formState.id}
-              required
+              id="familyFriendly"
+              type="checkbox"
+              onChange={handleCheckbox}
+              checked={formState.familyFriendly}
             />
-            <br></br>
-            <button type="submit">Delete Activity</button>
-          </form>
-        </div> */}
+          </label>
 
-        {/* UPDATE */}
+          <label htmlFor="district">District:</label>
+          <select
+            id="district"
+            onChange={handleChange}
+            value={formState.district}
+          >
+            <option value="654a5d9082ebbef4acc730a4">Northwest Seattle</option>
+            <option value="654a5d9082ebbef4acc730a5">Northeast Seattle</option>
+            <option value="654a5d9082ebbef4acc730a6">
+              Magnolia & Queen Anne
+            </option>
+            <option value="654a5d9082ebbef4acc730a7">Central Seattle</option>
+            <option value="654a5d9082ebbef4acc730a8">Downtown Seattle</option>
+            <option value="654a5d9082ebbef4acc730a9">
+              West Seattle & Delridge
+            </option>
+            <option value="654a5d9082ebbef4acc730aa">Southeast Seattle</option>
+          </select>
 
+          <label htmlFor="image">Image url:</label>
+          <input
+            name=""
+            id="image"
+            cols="30"
+            rows="2"
+            onChange={handleChange}
+            value={formState.image}
+          />
+
+          <label htmlFor="description">Description:</label>
+          <input
+            name=""
+            id="description"
+            cols="30"
+            rows="2"
+            onChange={handleChange}
+            value={formState.description}
+          />
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </>
   );
 }
