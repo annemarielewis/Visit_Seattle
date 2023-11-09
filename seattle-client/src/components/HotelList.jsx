@@ -60,7 +60,7 @@ export default function HotelList() {
                             <img
                                 alt={hotel.name}
                                 //src={hotel.img}
-                                src={"/assets/hotelExample.jpg"}
+                                src={hotel.img}
                             />
                             <CardBody>
                                 <CardTitle tag="h5">

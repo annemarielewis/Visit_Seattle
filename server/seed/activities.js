@@ -177,7 +177,7 @@ const main = async () => {
       priceRating: "$$",
       familyFriendly: true,
       district: Magnolia[0]._id,
-      image: "../assets/spaceNeedle.png",
+      image: "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/27/60/b5.jpg",
       description:
         "Constructed in preparation for the 1962 World's Fair, the Space Needle, standing at a height of 605 feet, swiftly emerged as a universally recognized symbol of the city. Once you reach the observation level, accessible via a brief 43-second elevator ride, you'll have the opportunity to witness the original doodle-on-a-napkin idea that gave birth to the Space Needle's design. From the pinnacle, take in panoramic views encompassing Elliott Bay, the majestic Cascade Mountains, and even the imposing Mount Rainier.",
     },
@@ -232,15 +232,15 @@ const main = async () => {
       priceRating: "$",
       familyFriendly: true,
       district: Southeast[0]._id,
-      image: "../assets/kubota.png",
+      image: "https://kubotagarden.org/uploads/1/3/3/4/133498984/view-fm-moon-bridge-viewing-platform_orig.jpg",
       description:
         "20 acres, 11 ponds, 2 red bridges, 140 maple varieties, 30 hydrangea varieties.",
     },
   ];
-  await Activity.deleteMany();
-  let createActivity = await Activity.insertMany(activities);
-  console.log(createActivity);
-  console.log("created activities!");
+
+  await Activity.deleteMany()
+  await Activity.insertMany(activities)
+  console.log('activities added')
 };
 
 const run = async () => {

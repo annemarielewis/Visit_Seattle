@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react'
-import { DetailsContext } from '../DataContext'
+// import { DetailsContext } from '../DataContext'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { BASE_URL } from '../globals'
@@ -22,13 +22,14 @@ export default function RestaurantList() {
 
     //for accessing and setting details
 
-    const { details, setDetails } = useContext(DetailsContext) //this is OBJECT destructuring, not array destructuring, because DetailsContext was made an object when the value got sent through as props in App.jsx
+    // const { details, setDetails } = useContext(DetailsContext) //this is OBJECT destructuring, not array destructuring, because DetailsContext was made an object when the value got sent through as props in App.jsx
+    // const selectRestaurant = (restaurant) => setDetails(restaurant)
 
-    const selectRestaurant = (restaurant) => setDetails(restaurant)
+    //
 
     //this return can be turned into a ternary when we get that search bar working in here
     return (
-        <div className='restaurant-list'>
+        <div className='card-list'>
             {restaurants.map((restaurant) =>
             (
                 <Card
@@ -36,8 +37,8 @@ export default function RestaurantList() {
                     style={{ width: '18rem' }}
                 >
                     <img
-                        alt='picture of a place setting'
-                        src='assets/restaurantExample.jpg'
+                        alt={restaurant.name}
+                        src={restaurant.img}
                     />
                     <CardBody>
                         <CardTitle tag='h5'>
@@ -52,7 +53,6 @@ export default function RestaurantList() {
                         </CardText>
                         <Link
                             to={`/RestaurantList/${restaurant._id}`}
-                            onClick={() => selectRestaurant(restaurant)}
                             className='btn'
                             style={{
                                 backgroundColor: 'rgb(110, 117, 124)',
