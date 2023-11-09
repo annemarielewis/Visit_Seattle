@@ -11,16 +11,15 @@ import {
   Spinner,
 } from "reactstrap";
 
+import { Link } from "react-router-dom";
+
 //Initiate function for activities:
 export default function ActivityList() {
   const [activities, setActivities] = useState([]);
-console.log("hi")
   //UseEffect to define when the activities will load (on page load for this component)
   useEffect(() => {
     const getActivities = async () => {
-      const response = await axios.get(
-        `http://localhost:3001/activity`
-      );
+      const response = await axios.get(`http://localhost:3001/activity`);
       console.log(response.data);
       setActivities(response.data);
     };
@@ -43,20 +42,20 @@ console.log("hi")
     <div className="activities">
       <h1 className="page-title">Activities:</h1>
       {activities.map((activity) => (
-        //<Link to={`/activity/${activity._id}`} key={activity._id}>
-        <Card key={activity._id} style={{ width: "18rem" }}>
-          <img alt="Sample" src="../../assets/hotelExample.jpg" />
-          <CardBody>
-            <CardTitle tag="h5">{activity.name}</CardTitle>
-            <CardSubtitle className="mb-2 text-muted" tag="h6">
-              Type of Activity: {activity.type}
-            </CardSubtitle>
-            <Button onClick={() => showActivityDetails(activity._id)}>
-              Details
-            </Button>
-          </CardBody>
-        </Card>
-        //</Link>
+        <Link to={`/activity/${activity._id}`} key={activity._id}>
+          <Card key={activity._id} style={{ width: "18rem" }}>
+            <img alt="Sample" src={activity.image} />
+            <CardBody>
+              <CardTitle tag="h5">{activity.name}</CardTitle>
+              <CardSubtitle className="mb-2 text-muted" tag="h6">
+                Type of Activity: {activity.type}
+              </CardSubtitle>
+              <Button onClick={() => showActivityDetails(activity._id)}>
+                Details
+              </Button>
+            </CardBody>
+          </Card>
+        </Link>
       ))}
     </div>
   ) : (

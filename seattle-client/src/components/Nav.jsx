@@ -12,6 +12,7 @@ export default function Nav () {
             <Link to="/ActivityList">Things To Do</Link>
             <Link to="/HotelList" className={location.pathname === '/HotelList' ? activeMenuItemClass : ''}>Places to Stay</Link>
             <Link to="/RestaurantList">Where to Eat</Link>
+            <Link to="/admin">Admin</Link>
         </div>
     )
 }
