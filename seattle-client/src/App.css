@@ -23,7 +23,7 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,34 +57,33 @@ html {
   font-size: 18px;
   transition: 0.4s;
   border-radius: 10px;
+  vertical-align: middle;
 }
 
 .Navbar a:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   transition: 0.4s;
-  color: #cbf479;
+  /* color: #66b828; */
   cursor: pointer;
 }
 
 .active-menu-item {
-  transform: scale(1.1);
-  border: 1px solid #cbf479;
-  background-color: #cbf479;
-  text-shadow: -1px -1px 0 #000,  
-  1px -1px 0 #000,
- -1px 1px 0 #000,
-  1px 1px 0 #000;;
+  transform: scale(1.2);
+  border: 1px solid #66b828;
+  background-color: #002142;
 }
 
 .card-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 120px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .card-details {
   display: flex;
+  text-align: center;
   justify-content: center;
   margin-top: 120px;
 }
@@ -92,25 +91,27 @@ html {
 .card {
   display: flex;
   text-align: center;
-  background-color: whitesmoke;
-  /* backdrop-filter: blur(7px); */
+  /* backdrop-filter: blur(3px); */
+  background-color: #f6f8f5;
   width: 350px;
   padding: 20px;
-  border: 1px solid #66b828;
+  border: 1px solid #002142;
   border-radius: 15px;
   box-shadow: 10px 10px 5px rgba(26, 26, 26, 0.8);
   margin: 20px;
 }
 
 .card img {
-  max-width: 300px;
-  max-height: 200px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .Footer,
 .Team {
-  background-color: #002142;
-  color: #cdcfcc;
+  /* background-color: #002142; */
+  color: #002142;
   display: flex;
   justify-content: space-between;
   padding: 1rem 3.7rem 1rem 1rem;
@@ -118,8 +119,15 @@ html {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 85px;
+  height: 100px;
   z-index: 99;
+}
+
+.Footer,
+.Team {
+  background-image: url('/assets/seattleSkyline.png');
+  background-position: fixed;
+  background-size: cover;
 }
 
 .member{
@@ -134,7 +142,7 @@ html {
 }
 
 i{
-  color: #cdcfcc;
+  color: #002142;
   margin: 0 .5rem 0 .5rem;
 }
 

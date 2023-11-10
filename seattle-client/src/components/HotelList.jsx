@@ -3,6 +3,7 @@ import axios from "axios"
 import { BASE_URL } from '../globals'
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
 import HotelPage from './HotelPage'
+import './CardList.css'
 
 export default function HotelList() {
 
@@ -38,7 +39,7 @@ export default function HotelList() {
                             <CardBody>
                                 <CardTitle tag="h5">{hotel.name}</CardTitle>
                                 <CardSubtitle className="mb-2 text-muted" tag="h6">
-                                    Rating: {hotel.rating}
+                                    Rating: {hotel.rating}/5
                                 </CardSubtitle>
                                 <Button onClick={() => showHotelDetails(hotel)}>
                                     Details
