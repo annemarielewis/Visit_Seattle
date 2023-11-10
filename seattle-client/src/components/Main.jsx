@@ -12,6 +12,7 @@ import DistrictList from "./DistrictList";
 //will need to add additional routes for CRUD down the road
 import ActivityAdd from "./ActivityAdd";
 import ActivityDelete from "./ActivityDelete";
+import ActivityUpdate from "./ActivityUpdate";
 
 export default function Main() {
   return (
@@ -27,6 +28,7 @@ export default function Main() {
         <Route path="/HotelList/:id" element={<HotelPage />} />
         <Route path="/admin" element={<ActivityAdd />} />
         <Route path="/deleteactivity/:id" element={<ActivityDelete />} />
+        <Route path="/activity/:id" element={<ActivityUpdate />} />
         <Route path="/DistrictList" element={<DistrictList />} />
       </Routes>
     </div>
