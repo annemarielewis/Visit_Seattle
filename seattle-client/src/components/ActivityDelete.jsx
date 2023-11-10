@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import Message from "./Message";
 
 export default function deleteActivity() {
   const initialState = {
@@ -7,6 +8,7 @@ export default function deleteActivity() {
   };
 
   const [deleteState, setDeleteState] = useState(initialState);
+  const [message, setMessage] = useState({})
 
   const handleChangeDelete = (event) =>
     setDeleteState({ ...deleteState, [event.target.id]: event.target.value });
@@ -18,14 +20,13 @@ export default function deleteActivity() {
     console.log(`data id: ${dataIDToDelete}`);
 
     try {
-      console.log("help");
       await axios.delete(
         `http://localhost:3001/deleteactivity/${dataIDToDelete}`
       );
-      console.log("me");
       setDeleteState(initialState);
+      setMessage({ className: 'success', text: 'Activity deleted.' })
     } catch (error) {
-      console.error("Activity not found:", error);
+      setMessage({ className: 'error', text: 'Something went wrong. Please try again.' })
     }
   };
   return (
@@ -44,6 +45,7 @@ export default function deleteActivity() {
         <br></br>
         <button type="submit">Delete Activity</button>
       </form>
+      <Message message={message} />
     </div>
   );
 }

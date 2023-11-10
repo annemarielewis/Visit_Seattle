@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Message from './Message'
 export default function addActivity() {
   const initialState = {
     name: "",
@@ -15,6 +16,7 @@ export default function addActivity() {
     description: "",
   };
 
+  const [message, setMessage] = useState({}) //will use this for a conditionally rendered success message
   const [formState, setFormState] = useState(initialState);
 
   const handleChange = (event) =>
@@ -52,14 +54,14 @@ export default function addActivity() {
       );
       // Check if the data was successfully added to the database
       if (response.status === 201) {
-        console.log("Data added successfully.");
+        setMessage({ className: 'success', text: 'Activity added!' });
         // Clear the form after adding data to the database
         setFormState(initialState);
       } else {
-        console.error("Data could not be added.");
+        setMessage({ className: 'error', text: 'Something went wrong. Please try again.' });
       }
     } catch (error) {
-      console.error("An error occurred:", error);
+      setMessage({ className: 'error', text: 'Something went wrong. Please try again.' });
     }
   };
 
@@ -172,6 +174,7 @@ export default function addActivity() {
           />
           <button type="submit">Send</button>
         </form>
+        <Message message={message} />
       </div>
       <Link to="/deleteactivity/:id">
         <button>Delete Activity</button>
