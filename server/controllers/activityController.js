@@ -185,10 +185,8 @@ async function updateActivity(req, res) {
 async function deleteActivity(req, res) {
   try {
     const id = req.params.id;
-    console.log(id);
-    let activity = await Activity.findById(id);
+    let activity = await Activity.findByIdAndDelete(id);
     if (activity) {
-      await Activity.findByIdAndDelete(id);
       return res.status(200).json(activity);
     }
     throw new Error("Activity not found");
@@ -196,3 +194,18 @@ async function deleteActivity(req, res) {
     return res.status(500).send(e.message);
   }
 }
+
+// async function deleteActivity(req, res) {
+//   try {
+//     const id = req.params.id;
+//     console.log(id);
+//     let activity = await Activity.findById(id);
+//     if (activity) {
+//       await Activity.findByIdAndDelete(id);
+//       return res.status(200).json(activity);
+//     }
+//     throw new Error("Activity not found");
+//   } catch (e) {
+//     return res.status(500).send(e.message);
+//   }
+// }
