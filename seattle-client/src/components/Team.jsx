@@ -27,7 +27,7 @@ export default function Team() {
                             <span className='fa-sr-only'>Haroon's Github Link</span>
                         </i>
                     </a>
-                    {/* <a href='' target='_blank'>
+                    {/* <a href='https://www.linkedin.com/in/haroon-frotan/' target='_blank'>
                     <i className="fa-brands fa-linkedin-in fa-2x" aria-hidden='true'>
                         <span className='fa-sr-only'>Haroon's LinkedIn Link</span>
                     </i>

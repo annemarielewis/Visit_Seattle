@@ -46,12 +46,14 @@ export default function addActivity() {
       description: formState.description,
     };
 
+    console.log('pre-axios call')
     try {
       // Send a POST request to your backend API
       const response = await axios.post(
         "http://localhost:3001/activity",
         dataToAdd
       );
+      console.log('post axios call')
       // Check if the data was successfully added to the database
       if (response.status === 201) {
         setMessage({ className: 'success', text: 'Activity added!' });
@@ -69,8 +71,17 @@ export default function addActivity() {
     <>
       {/* ADD */}
       <div className="add">
-        <h1>Add an Activity</h1>
         <form className="grid" onSubmit={handleSubmit}>
+        <h1>Add an Activity</h1>
+          <label htmlFor="name">Name:</label>
+            <input
+                name=""
+                id="name"
+                cols="30"
+                rows="2"
+                onChange={handleChange}
+                value={formState.name}
+            />
           <label htmlFor="type">Type:</label>
           <select id="type" onChange={handleChange} value={formState.type}>
             <option value="nature">Nature</option>
