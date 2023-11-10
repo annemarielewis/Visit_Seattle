@@ -7,7 +7,7 @@ const Home = () => {
         </video>
         <div className="content">
           <h1 className="hometext">Visit Seattle</h1>
-          <h2 className="hometext">Adventure Calls</h2>
+          <h2 className="hometext2">Adventure Calls</h2>
         </div>
       </div>
       <div className="aboutSeattle">

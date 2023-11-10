@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 export default function Admin () {
 
     return (
+        <div className="admin">
     <div className='admin-buttons'>
         <Link className='admin-link' to="/deleteactivity/:id">
             <button>Delete Activity</button>
@@ -13,7 +14,7 @@ export default function Admin () {
         <Link className='admin-link' to="/addactivity">
           <button>Add Activity</button>
         </Link>
-
+        </div>
     </div>
     )
 }

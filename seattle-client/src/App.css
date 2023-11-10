@@ -58,6 +58,7 @@ html {
   font-size: 18px;
   transition: 0.4s;
   border-radius: 10px;
+
 }
 
 .Navbar a:hover {
@@ -192,6 +193,14 @@ video {
   font-size: 5rem;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5),
+    2px -2px 4px rgba(0, 0, 0, 0.5), -2px 2px 4px rgba(0, 0, 0, 0.5);}
+
+.hometext2
+{
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5),
     2px -2px 4px rgba(0, 0, 0, 0.5), -2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -243,3 +252,6 @@ video {
   background-color: #002142;
 }
 
+.admin {
+  min-height: 70vh;
+}
