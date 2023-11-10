@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 // import SearchResults from './SearchResults'
 
+
 import RestaurantList from "./RestaurantList";
 import RestaurantPage from "./RestaurantPage";
 import ActivityList from "./ActivityList";
@@ -9,11 +10,13 @@ import ActivityPage from "./ActivityPage";
 import HotelList from "./HotelList";
 import HotelPage from "./HotelPage";
 import DistrictList from "./DistrictList";
+
 //will need to add additional routes for CRUD down the road
 import ActivityAdd from "./ActivityAdd";
 import ActivityDelete from "./ActivityDelete";
 
 export default function Main() {
+
   return (
     <div className="routesContainer">
       <Routes>
@@ -31,4 +34,5 @@ export default function Main() {
       </Routes>
     </div>
   );
+
 }
