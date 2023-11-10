@@ -7,7 +7,7 @@ export default function Nav () {
 
     return (
         <div className='Navbar'>
-            <Link to="/" className={location.pathname === '/' ? activeMenuItemClass : ''}>Home</Link>
+            <Link to="/" className="{location.pathname === '/' ? activeMenuItemClass : ''}">Home</Link>
             <Link to="/DistrictList">Districts</Link>
             <Link to="/ActivityList" className={location.pathname === '/ActivityList' ? activeMenuItemClass : ''}>Things To Do</Link>
             <Link to="/HotelList" className={location.pathname === '/HotelList' ? activeMenuItemClass : ''}>Places to Stay</Link>
