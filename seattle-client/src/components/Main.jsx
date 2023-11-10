@@ -3,7 +3,7 @@ import Home from "./Home";
 // import SearchResults from './SearchResults'
 
 import RestaurantList from './RestaurantList'
-import RestaurantPage from './RestaurantPage'
+// import RestaurantPage from './RestaurantPage'
 import ActivityList from './ActivityList'
 import ActivityPage from './ActivityPage'
 import HotelList from './HotelList'
@@ -20,7 +20,7 @@ export default function Main() {
                 <Route path='/' element={<Home />} />
                 {/* <Route path='/SearchResults' element={< SearchResults />} /> */}
                 <Route path='/RestaurantList' element={<RestaurantList />} />
-                <Route path='/RestaurantList/:id' element={<RestaurantPage />} /> 
+                {/* <Route path='/RestaurantList/:id' element={<RestaurantPage />} />  */}
                 <Route path='/ActivityList' element={<ActivityList />} />
                 <Route path='/ActivityList/:id' element={<ActivityPage />} />
                 <Route path='/HotelList' element={<HotelList />} />
