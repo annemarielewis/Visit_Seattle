@@ -10,13 +10,10 @@ const Home = () => {
           <h2 className="hometext">Adventure Calls</h2>
         </div>
       </div>
-      <div>
+      <div className="aboutSeattle">
         <h3 className="z">About Seattle</h3>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi,
-          soluta ipsa adipisci nemo numquam perspiciatis sit. Laudantium
-          deserunt obcaecati veniam quas ab molestias voluptate fuga? Excepturi
-          laudantium quasi porro quaerat?
+        <p className="fontabout">
+        Seattle, a city on Puget Sound in the Pacific Northwest, is surrounded by water, mountains and evergreen forests, and contains<br></br>thousands of acres of parkland. Washington State’s largest city, it’s home to a large tech industry, with Microsoft and Amazon<br></br>headquartered in its metropolitan area. The futuristic Space Needle, a 1962 World’s Fair legacy, is its most iconic landmark.
         </p>
       </div>
     </div>
