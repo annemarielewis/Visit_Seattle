@@ -2,33 +2,37 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 // import SearchResults from './SearchResults'
 
-import RestaurantList from './RestaurantList'
-// import RestaurantPage from './RestaurantPage'
-import ActivityList from './ActivityList'
-import ActivityPage from './ActivityPage'
-import HotelList from './HotelList'
-import HotelPage from './HotelPage'
-import DistrictList from './DistrictList'
+
+import RestaurantList from "./RestaurantList";
+import RestaurantPage from "./RestaurantPage";
+import ActivityList from "./ActivityList";
+import ActivityPage from "./ActivityPage";
+import HotelList from "./HotelList";
+import HotelPage from "./HotelPage";
+import DistrictList from "./DistrictList";
+
 //will need to add additional routes for CRUD down the road
 import ActivityAdd from "./ActivityAdd";
+import ActivityDelete from "./ActivityDelete";
 
 export default function Main() {
 
-    return (
-        <div className='routesContainer'>
-            <Routes>
-                <Route path='/' element={<Home />} />
-                {/* <Route path='/SearchResults' element={< SearchResults />} /> */}
-                <Route path='/RestaurantList' element={<RestaurantList />} />
-                {/* <Route path='/RestaurantList/:id' element={<RestaurantPage />} />  */}
-                <Route path='/ActivityList' element={<ActivityList />} />
-                <Route path='/ActivityList/:id' element={<ActivityPage />} />
-                <Route path='/HotelList' element={<HotelList />} />
-                <Route path='/HotelList/:id' element={<HotelPage />} />
-                <Route path='/admin' element={<ActivityAdd />} />
-                <Route path='/DistrictList' element={<DistrictList />} />
-            </Routes>
-        </div>
-    )
-}
+  return (
+    <div className="routesContainer">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path='/SearchResults' element={< SearchResults />} /> */}
+        <Route path="/RestaurantList" element={<RestaurantList />} />
+        <Route path="/RestaurantList/:id" element={<RestaurantPage />} />
+        <Route path="/ActivityList" element={<ActivityList />} />
+        <Route path="/ActivityList/:id" element={<ActivityPage />} />
+        <Route path="/HotelList" element={<HotelList />} />
+        <Route path="/HotelList/:id" element={<HotelPage />} />
+        <Route path="/admin" element={<ActivityAdd />} />
+        <Route path="/deleteactivity/:id" element={<ActivityDelete />} />
+        <Route path="/DistrictList" element={<DistrictList />} />
+      </Routes>
+    </div>
+  );
 
+}

@@ -185,8 +185,10 @@ async function updateActivity(req, res) {
 async function deleteActivity(req, res) {
   try {
     const id = req.params.id;
-    let activity = await Activity.findByIdAndDelete(id);
+    console.log(id);
+    let activity = await Activity.findById(id);
     if (activity) {
+      await Activity.findByIdAndDelete(id);
       return res.status(200).json(activity);
     }
     throw new Error("Activity not found");
