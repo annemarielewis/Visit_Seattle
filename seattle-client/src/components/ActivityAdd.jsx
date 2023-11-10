@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import Message from './Message'
+
 export default function addActivity() {
   const initialState = {
     name: "",
@@ -71,8 +73,9 @@ export default function addActivity() {
     <>
       {/* ADD */}
       <div className="add">
-        <form className="grid" onSubmit={handleSubmit}>
-        <h1>Add an Activity</h1>
+
+        <form className="add-grid" onSubmit={handleSubmit}>
+          <h1>Add an Activity</h1>
           <label htmlFor="name">Name:</label>
             <input
                 name=""
@@ -91,7 +94,7 @@ export default function addActivity() {
             <option value="art">Art</option>
             <option value="music">Music</option>
             <option value="landmarks">Landmarks</option>
-          </select>
+          </select><br />
 
           <label htmlFor="number">Phone number:</label>
           <input
@@ -133,7 +136,7 @@ export default function addActivity() {
             <option value="$">$</option>
             <option value="$$">$$</option>
             <option value="$$$">$$$</option>
-          </select>
+          </select><br />
 
           <label htmlFor="familyFriendly">
             Family Friendly:{" "}
@@ -143,7 +146,7 @@ export default function addActivity() {
               onChange={handleCheckbox}
               checked={formState.familyFriendly}
             />
-          </label>
+          </label><br />
 
           <label htmlFor="district">District:</label>
           <select
@@ -162,7 +165,7 @@ export default function addActivity() {
               West Seattle & Delridge
             </option>
             <option value="654a5d9082ebbef4acc730aa">Southeast Seattle</option>
-          </select>
+          </select><br />
 
           <label htmlFor="image">Image url:</label>
           <input
@@ -190,6 +193,9 @@ export default function addActivity() {
       <Link to="/deleteactivity/:id">
         <button>Delete Activity</button>
       </Link>
+      <Link to="/activity/:id">
+          <button>Update Activity</button>
+      </Link>
     </>
-  );
+  )
 }

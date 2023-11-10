@@ -1,4 +1,5 @@
 export default function Team() {
+
     return (
         <div className="Team">
             <div className='footerTitle'>
@@ -27,11 +28,11 @@ export default function Team() {
                             <span className='fa-sr-only'>Haroon's Github Link</span>
                         </i>
                     </a>
-                    {/* <a href='https://www.linkedin.com/in/haroon-frotan/' target='_blank'>
+                    <a href='https://www.linkedin.com/in/haroon-frotan/' target='_blank'>
                     <i className="fa-brands fa-linkedin-in fa-2x" aria-hidden='true'>
                         <span className='fa-sr-only'>Haroon's LinkedIn Link</span>
                     </i>
-                </a> */}
+                </a> 
                 </div>
             </div>
             <div className='member'>
@@ -67,10 +68,5 @@ export default function Team() {
 
         </div>
     )
-}
 
-{/* <h4>Project Team Members:</h4>
-<h5><span>Annemarie Lewis</span> <a href="https://github.com/annemarielewis"></a></h5>
-<h5><span>Haroon Frotan</span> <a href="https://github.com/HaroonFro"></a></h5>
-<h5><span>Rhys Frazier</span> <a href="https://github.com/rhysrfrazier"></a></h5>
-<h5><span>Ryan Fitzgerald</span> <a href="https://github.com/Ryan-Fitzgerald-9"></a></h5> */}
+}
