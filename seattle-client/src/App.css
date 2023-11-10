@@ -46,6 +46,7 @@ html {
   z-index: 100;
   color: #f3f5f2;
   background-color: #002142;
+  letter-spacing: 1px;
 }
 
 .Navbar a {
@@ -55,6 +56,7 @@ html {
   font-weight: 800;
   font-size: 18px;
   transition: 0.4s;
+  border-radius: 10px;
 }
 
 .Navbar a:hover {
@@ -66,7 +68,12 @@ html {
 
 .active-menu-item {
   transform: scale(1.1);
-  border: 1px solid #f4f6f2;
+  border: 1px solid #cbf479;
+  background-color: #cbf479;
+  text-shadow: -1px -1px 0 #000,  
+  1px -1px 0 #000,
+ -1px 1px 0 #000,
+  1px 1px 0 #000;;
 }
 
 .card-list {
@@ -186,5 +193,31 @@ video {
 
 .z {
   z-index: 1000;
+}
+
+.admin-buttons {
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.admin-link button {
+  margin-top: 10px;
+  background-color: #002142;
+  color: #f4f6f3;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 5px 5px 5px rgba(26, 26, 26, 0.8);
+}
+
+.admin-link button:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+  color: #cbf479;
+  background-color: #002142;
 }
 

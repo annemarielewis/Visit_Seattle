@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import Message from './Message'
 
@@ -74,7 +73,7 @@ export default function addActivity() {
       {/* ADD */}
       <div className="add">
 
-        <form className="add-grid" onSubmit={handleSubmit}>
+        <form className="grid" onSubmit={handleSubmit}>
           <h1>Add an Activity</h1>
           <label htmlFor="name">Name:</label>
             <input
@@ -190,12 +189,7 @@ export default function addActivity() {
         </form>
         <Message message={message} />
       </div>
-      <Link to="/deleteactivity/:id">
-        <button>Delete Activity</button>
-      </Link>
-      <Link to="/activity/:id">
-          <button>Update Activity</button>
-      </Link>
+      
     </>
   )
 }
