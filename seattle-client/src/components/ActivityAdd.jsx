@@ -47,14 +47,13 @@ export default function addActivity() {
       description: formState.description,
     };
 
-    console.log('pre-axios call')
+  
     try {
       // Send a POST request to your backend API
       const response = await axios.post(
         "http://localhost:3001/activity",
         dataToAdd
       );
-      console.log('post axios call')
       // Check if the data was successfully added to the database
       if (response.status === 201) {
         setMessage({ className: 'success', text: 'Activity added!' });
@@ -186,8 +185,8 @@ export default function addActivity() {
             value={formState.description}
           />
           <button type="submit">Send</button>
-        </form>
         <Message message={message} />
+        </form>
       </div>
       
     </>
