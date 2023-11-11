@@ -44,8 +44,8 @@ export default function deleteActivity() {
         />
         <br></br>
         <button type="submit">Delete Activity</button>
+        <Message message={message} />
       </form>
-      <Message message={message} />
     </div>
   );
 }

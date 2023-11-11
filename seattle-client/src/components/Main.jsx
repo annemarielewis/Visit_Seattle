@@ -10,8 +10,8 @@ import ActivityPage from "./ActivityPage";
 import HotelList from "./HotelList";
 import HotelPage from "./HotelPage";
 import DistrictList from "./DistrictList";
+import Quiz from "./Quiz"
 
-//will need to add additional routes for CRUD down the road
 import Admin from "./Admin";
 import ActivityAdd from "./ActivityAdd";
 import ActivityDelete from "./ActivityDelete";
@@ -35,6 +35,7 @@ export default function Main() {
         <Route path="/deleteactivity/:id" element={<ActivityDelete />} />
         <Route path="/activity/:id" element={<ActivityUpdate />} />
         <Route path="/DistrictList" element={<DistrictList />} />
+        <Route path="/quiz" element={<Quiz />} />
       </Routes>
     </div>
   );

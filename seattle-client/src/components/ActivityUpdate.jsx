@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, redirect } from "react-router-dom"
 import axios from "axios"
+import Message from './Message'
 import './UpdateAddForm.css'
 
 export default function ActivityUpdate() {
@@ -10,6 +11,8 @@ export default function ActivityUpdate() {
 
     const [getState, setGetState] = useState(initialState)
     const [activityDetails, setActivityDetails] = useState(null)
+    const [idMessage, setIdMessage] =useState({})
+    const [message, setMessage] =useState({})
 
     const handleChangeGet = (event) => setGetState({...getState, [event.target.id]: event.target.value})
 
@@ -23,10 +26,10 @@ export default function ActivityUpdate() {
             const response = await axios.get(
                 `http://localhost:3001/activity/${dataIDtoUpdate}`
             )
-            console.log("ID found")
             setActivityDetails(response.data)
+            setIdMessage({className: 'success', text: 'ID found'})
         } catch (error) {
-            console.error("Activity not found", error)
+            setIdMessage({className: 'error', text: 'ID not found. Please try again'})
         }
     }
 
@@ -52,13 +55,16 @@ export default function ActivityUpdate() {
             `http://localhost:3001/activity/${getState.id}`,
             activityDetails
             )
-
             if (response.status === 200) {
-            console.log("Data updated successfully.")
+            setMessage({className: 'updated', text: 'Success! The page will refresh momentarily.'})
+            setTimeout(()=> location.reload(), 3000)
+            //after 3,000 milliseconds, this will refresh the form
+
             } else {
-            console.error("Data could not be updated.")
+            setMessage({className: 'error', text: 'Something went wrong. Please try again.'})
             }
         } catch (error) {
+            setMessage({className: 'error', text: 'Something went wrong. Please try again.'})
             console.error("An error occurred:", error)
         }
     }
@@ -77,6 +83,7 @@ export default function ActivityUpdate() {
                 />
                 <br></br>
                 <button type="submit">Find Activity</button>
+                <Message message={idMessage} />
             </form>
 
             {activityDetails && (
@@ -193,6 +200,7 @@ export default function ActivityUpdate() {
                         value={activityDetails.description}
                     />
                     <button type="submit">Update</button>
+                    <Message message={message} />
                 </form>
             )}
         </div>
