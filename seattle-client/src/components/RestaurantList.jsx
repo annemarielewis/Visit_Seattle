@@ -38,7 +38,7 @@ export default function RestaurantList() {
                             <CardBody>
                                 <CardTitle tag="h5">{restaurant.name}</CardTitle>
                                 <CardSubtitle className="mb-2 text-muted" tag="h6">
-                                    Rating: {restaurant.rating}
+                                    Rating: {restaurant.rating}/5
                                 </CardSubtitle>
                                 <Button onClick={() => showRestaurantDetails(restaurant)}>
                                     Details
