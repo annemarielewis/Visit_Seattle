@@ -262,3 +262,16 @@ video {
 .admin {
   min-height: 70vh;
 }
+
+.success,
+.updated{
+  color: green;
+  font-weight: bold;
+  margin: .5rem 0 0 0;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin: .5rem 0 0 0rem;
+}

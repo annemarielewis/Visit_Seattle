@@ -29,6 +29,7 @@ export default function ActivityUpdate() {
             setActivityDetails(response.data)
             setIdMessage({className: 'success', text: 'ID found'})
         } catch (error) {
+            setActivityDetails(null)
             setIdMessage({className: 'error', text: 'ID not found. Please try again'})
         }
     }
