@@ -1,8 +1,40 @@
+import { useEffect, useRef } from "react";
+
 const Home = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (!video) {
+      return
+    }
+
+    const handleTimeUpdate = () => {
+      const stopTime = 145
+
+      if (video.currentTime >= stopTime) {
+        video.currentTime = 0
+      }
+    };
+
+    const handleEnded = () => {
+      video.play()
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate)
+    video.addEventListener("ended", handleEnded)
+
+    return () => {
+      video.removeEventListener("timeupdate", handleTimeUpdate)
+      video.removeEventListener("ended", handleEnded)
+    }
+  }, [])
+
   return (
     <div className="home">
       <div className="video-container">
-        <video autoPlay muted loop>
+        <video ref={videoRef} autoPlay muted loop>
           <source src="../../public/assets/HomeVideo.mp4" type="video/mp4" />
         </video>
         <div className="content">
