@@ -7,7 +7,6 @@ export default function Quiz2({ category }) {
 
     const handleChange = (e) => {
         setSearchParam(e.target.value.toLowerCase()) //toLowerCase() to match the db, so this search doesn't have to be case sensitive
-        console.log(e.target.value.toLowerCase())
     }
 
     if (category === 'restaurant') {
@@ -16,6 +15,7 @@ export default function Quiz2({ category }) {
                 <label htmlFor="searchParam">What kind of food sounds good?</label>
                 <br />
                 <input type='text' id='searchParam' onChange={handleChange} defaultValue='' placeholder='e.g., seafood' />
+                {searchParam === '' ? null : <Quiz3 searchParam={searchParam} category={category} />}
             </>
 
         )
@@ -35,7 +35,9 @@ export default function Quiz2({ category }) {
                     <option value='music'>Music</option>
                     <option value='landmarks'>Landmarks</option>
                 </select>
+                {searchParam === '' ? null : <Quiz3 searchParam={searchParam} category={category} />}
             </>
         )
     }
+    
 }
