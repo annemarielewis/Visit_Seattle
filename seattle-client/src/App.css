@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans:ital@1&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +19,6 @@ html {
   background-position: center;
   overflow: auto;
 }
-
 
 .Header {
   position: fixed;
@@ -51,27 +52,33 @@ html {
 }
 
 .Navbar a {
+  font-family: 'Josefin Sans', sans-serif;
   color: #f6f8f5;
   padding: 5px;
   text-decoration: none;
-  font-weight: 800;
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 22px;
   transition: 0.4s;
   border-radius: 10px;
-
+  vertical-align: middle;
 }
 
 .Navbar a:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: 0.4s;
-  /* color: #66b828; */
   cursor: pointer;
 }
 
-.active-menu-item {
-  transform: scale(1.2);
-  border: 1px solid #66b828;
+.Navbar .active-menu-item {
+  transform: scale(1.1);
   background-color: #002142;
+}
+
+.Navbar .active-menu-item::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #66b828;
+  margin-top: 5px;
 }
 
 .card-list {
@@ -82,7 +89,7 @@ html {
   margin-bottom: 100px;
 }
 
-.card-details {
+/* .card-details {
   display: flex;
   text-align: center;
   justify-content: center;
@@ -92,7 +99,6 @@ html {
 .card {
   display: flex;
   text-align: center;
-  /* backdrop-filter: blur(3px); */
   background-color: #f6f8f5;
   width: 350px;
   padding: 20px;
@@ -107,34 +113,80 @@ html {
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+} */
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.overlay h3,
+.overlay button {
+  margin: 5px;
+}
+
+.card:hover img {
+  filter: blur(2px);
+}
+
+.card:hover .overlay {
+  opacity: 1;
 }
 
 .Footer,
 .Team {
   /* background-color: #002142; */
-  color: #002142;
+  font-family: 'Josefin Sans', sans-serif;
   display: flex;
   justify-content: space-between;
   padding: 1rem 3.7rem 1rem 1rem;
   align-items: center;
-  /* position: fixed; */
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 100px;
   z-index: 99;
-}
+  background-color: #002142;
+  color: #f3f5f2;
 
-.Footer,
-.Team {
-  background-image: url('/assets/seattleSkyline.png');
-  background-position: fixed;
+  /* background-image: url('/assets/seattleSkyline3.png');
   background-size: cover;
+  background-repeat: no-repeat; */
 }
 
-.member{
+.member {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.member h6 {
+  font-size: 16px;
 }
 
 .icons{
@@ -143,7 +195,7 @@ html {
 }
 
 i{
-  color: #002142;
+  color: #f3f5f2;
   margin: 0 .5rem 0 .5rem;
 }
 
@@ -197,14 +249,15 @@ video {
 }
 
 .hometext {
-  font-size: 5rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 7.5rem;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5),
     2px -2px 4px rgba(0, 0, 0, 0.5), -2px 2px 4px rgba(0, 0, 0, 0.5);}
 
-.hometext2
-{
-  font-size: 3rem;
+.hometext2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3.5rem;
   font-weight: bold;
   font-style: italic;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5),

@@ -35,7 +35,7 @@ export default function RestaurantList() {
                     {restaurants.map((restaurant, key) => (
                         <Card className="card" key={restaurant._id} style={{width: '18rem'}}>
                             <img alt={restaurant.name} src={restaurant.img}/>
-                            <CardBody>
+                            <CardBody className="overlay">
                                 <CardTitle tag="h5">{restaurant.name}</CardTitle>
                                 <CardSubtitle className="mb-2 text-muted" tag="h6">
                                     Rating: {restaurant.rating}/5

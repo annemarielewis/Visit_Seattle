@@ -35,7 +35,7 @@ export default function ActivityList() {
                     {activities.map((activity, key) => (
                         <Card className="card" key={activity._id} style={{width: '18rem'}}>
                             <img alt={activity.name} src={activity.image}/>
-                            <CardBody>
+                            <CardBody className="overlay">
                                 <CardTitle tag="h5">{activity.name}</CardTitle>
                                 <CardSubtitle className="mb-2 text-muted" tag="h6">
                                     Type: {activity.type}

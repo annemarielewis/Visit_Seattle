@@ -36,7 +36,7 @@ export default function HotelList() {
                     {hotels.map((hotel, key) => (
                         <Card className="card" key={hotel._id} style={{width: '18rem'}}>
                             <img alt={hotel.name} src={hotel.img}/>
-                            <CardBody>
+                            <CardBody className="overlay">
                                 <CardTitle tag="h5">{hotel.name}</CardTitle>
                                 <CardSubtitle className="mb-2 text-muted" tag="h6">
                                     Rating: {hotel.rating}/5
