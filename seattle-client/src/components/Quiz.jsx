@@ -12,7 +12,7 @@ export default function Quiz() {
 
 
     return (
-        <div className='grid'>
+        <div className='grid quiz'>
             <h1>Not sure what to do?</h1>
             <label htmlFor='category'>What are you in the mood for?</label>
             <br />
