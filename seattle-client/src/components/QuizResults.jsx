@@ -9,7 +9,7 @@ export default function QuizResults({ filteredResults, selectedDistrict }) {
     } else if (filteredResults.length > 0) {
         return (<div >
             {filteredResults.map((result) => (
-                <Card className='card' key={result._id} style={{ width: '18rem' }}>
+                <Card className='quiz-card' key={result._id} style={{ width: '18rem' }}>
                     <CardBody>
                         <CardTitle tag="h5">{result.name}</CardTitle>
                         <CardSubtitle className="mb-2 text-muted" tag="h6">

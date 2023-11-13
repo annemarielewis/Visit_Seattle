@@ -6,7 +6,7 @@ export default function Team() {
                 <h4>Project Team Members:</h4>
             </div>
             <div className='member'>
-                <h6>Annemarrie Lewis</h6>
+                <h6>Annemarie Lewis</h6>
                 <div className='icons'>
                     <a href='https://github.com/annemarielewis' target='_blank'>
                         <i className="fa-brands fa-github fa-2x" aria-hidden='true'>

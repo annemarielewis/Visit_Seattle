@@ -133,7 +133,6 @@ html {
 }
 
 .Team {
-  /* background-color: #002142; */
   font-family: 'Josefin Sans', sans-serif;
   display: flex;
   justify-content: space-between;
@@ -146,10 +145,6 @@ html {
   z-index: 99;
   background-color: #002142;
   color: #f3f5f2;
-
-  /* background-image: url('/assets/seattleSkyline3.png');
-  background-size: cover;
-  background-repeat: no-repeat; */
 }
 
 .member {
@@ -200,7 +195,7 @@ form {
 /* video */
 .video-container {
   position: relative;
-  height: 48vh;
+  height: 70vh;
   width: 100%;
   overflow: hidden;
   background-color: #002142;
@@ -250,8 +245,43 @@ video {
   background-color: #002142;
   color: #fdfefc;
   max-width: 100%;
+}
+
+.aboutSeattle img {
+  padding: 20px;
+  margin-left: 50px;
+  height: 450px;
+  max-width: 500px;
+}
+
+.quiz-section {
+  background-color: #002142;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
   margin-bottom: 100px;
-  padding-top:10px;
+}
+
+.quiz-section img {
+  height: 400px;
+  max-width: 600px;
+  margin-right: auto;
+}
+
+.quiz-section .quiz-content {
+  max-width: 600px;
+  margin-left: 50px;
+}
+
+.quiz-card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  color: #002142;
 }
 
 .fontabout {
